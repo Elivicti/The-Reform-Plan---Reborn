@@ -11,4 +11,10 @@ spriteTypes = {
 		texturefile = "gfx/interface/icons/ascension_perks/ap_tt_reform_plane_2.dds"
 		alwaystransparent = yes
 	}
+	#改革计划：第三部分
+	spriteType = {
+		name = "GFX_ap_tt_reform_plane_3"
+		texturefile = "gfx/interface/icons/ascension_perks/ap_tt_reform_plane_2.dds"
+		alwaystransparent = yes
+	}
 }
