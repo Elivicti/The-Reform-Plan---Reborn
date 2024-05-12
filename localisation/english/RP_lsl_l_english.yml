@@ -1,7 +1,8 @@
 ﻿l_english:
+ NAME_tt_reform_plane_country:0 "Reform Project"
 
  edict_tt_reform_plane:0 "Reform Plan"
- edict_tt_reform_plane_desc:0"Open the "Reform Plan" main interface, or communicate at £f1£."
+ edict_tt_reform_plane_desc:0 "Open the \"Reform Plan\" main interface, or communicate at £f1£."
 
  tt_reform_plane:0 "Reform Plan"
  tt_reform_plane.3:0 "Reform Plan"
