@@ -1,0 +1,61 @@
+definitions = {
+    ### 添加改革修正
+    ## hint = 添加改革修正
+    ## type = scripted_effect
+    ## replace_scopes = { this = country root = country }
+    RP_add_revolution_modifier
+}
+
+
+parameters = {
+    ### 花费的资源类型
+    ## context_key = scripted_effect@RP_add_revolution_modifier
+    RES = <resource>
+
+    ### 第一级静态修正
+    ## context_key = scripted_effect@RP_add_revolution_modifier
+    MOD_1 = <static_modifier>
+    ## context_key = scripted_effect@RP_add_revolution_modifier
+    COST_1 = float
+
+    ### 第二级静态修正
+    ## context_key = scripted_effect@RP_add_revolution_modifier
+    MOD_2 = <static_modifier>
+    ## context_key = scripted_effect@RP_add_revolution_modifier
+    COST_2 = float
+
+    ### 第三级静态修正
+    ## context_key = scripted_effect@RP_add_revolution_modifier
+    MOD_3 = <static_modifier>
+    ## context_key = scripted_effect@RP_add_revolution_modifier
+    COST_3 = float
+
+    ### 第四级静态修正
+    ## context_key = scripted_effect@RP_add_revolution_modifier
+    MOD_4 = <static_modifier>
+    ## context_key = scripted_effect@RP_add_revolution_modifier
+    COST_4 = float
+
+    ### 第五级静态修正
+    ## context_key = scripted_effect@RP_add_revolution_modifier
+    MOD_5 = <static_modifier>
+    ## context_key = scripted_effect@RP_add_revolution_modifier
+    COST_5 = float
+}
+
+
+
+### overwrite
+button_effect = {
+    ## replace_scopes = { this = any root = any from = country }
+    ## cardinality = 0..1
+    potential = single_alias_right[trigger_clause]
+
+    ## replace_scopes = { this = any root = any from = country }
+    ## cardinality = 0..1
+    allow = single_alias_right[trigger_clause]
+
+    ## replace_scopes = { this = any root = any from = country }
+    ## cardinality = 0..1
+    effect = single_alias_right[effect_clause]
+}
