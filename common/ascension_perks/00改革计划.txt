@@ -181,6 +181,7 @@ ap_tt_reform_plane_3 = {
 		}
 	}
 	potential = {
+		always = no
 		NOT = {
 			has_ascension_perk = ap_tt_reform_plane_3
 		}
