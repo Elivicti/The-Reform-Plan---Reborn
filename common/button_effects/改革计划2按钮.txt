@@ -19,90 +19,18 @@ button_tt_economics_revolution = {
 		has_ascension_perk = ap_tt_reform_plane_2
 	}
 	effect = {
-		#1
-		if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_economics_revolution }
-				resource_stockpile_compare = { resource = sr_zro value >= 500 }
-			}
-			add_resource = { sr_zro = -500 }
-			add_modifier = { modifier = "mod_tt_economics_revolution_1" days = -1 }
-			set_country_flag = flag_tt_economics_revolution
-		}
-		else_if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_economics_revolution }
-				resource_stockpile_compare = { resource = sr_zro value < 500 }
-			}
-			custom_tooltip = stop_revolution_sr_zro1
-		}
-		#2
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_1
-				resource_stockpile_compare = { resource = sr_zro value >= 1000 }
-			}
-			add_resource = { sr_zro = -1000 }
-			remove_modifier = "mod_tt_economics_revolution_1"
-			add_modifier = { modifier = "mod_tt_economics_revolution_2" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_1
-				resource_stockpile_compare = { resource = sr_zro value < 1000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro1
-		}
-		#3
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_2
-				resource_stockpile_compare = { resource = sr_zro value >= 1500 }
-			}
-			add_resource = { sr_zro = -1500 }
-			remove_modifier = "mod_tt_economics_revolution_2"
-			add_modifier = { modifier = "mod_tt_economics_revolution_3" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_2
-				resource_stockpile_compare = { resource = sr_zro value < 1500 }
-			}
-			custom_tooltip = stop_revolution_sr_zro1
-		}
-		#4
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_3
-				resource_stockpile_compare = { resource = sr_zro value >= 2000 }
-			}
-			add_resource = { sr_zro = -2000 }
-			remove_modifier = "mod_tt_economics_revolution_3"
-			add_modifier = { modifier = "mod_tt_economics_revolution_4" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_3
-				resource_stockpile_compare = { resource = sr_zro value < 2000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro1
-		}
-		#5
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_4
-				resource_stockpile_compare = { resource = sr_zro value >= 2500 }
-			}
-			add_resource = { sr_zro = -2500 }
-			remove_modifier = "mod_tt_economics_revolution_4"
-			add_modifier = { modifier = "mod_tt_economics_revolution_5" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_4
-				resource_stockpile_compare = { resource = sr_zro value < 2500 }
-			}
-			custom_tooltip = stop_revolution_sr_zro1
+		RP_add_revolution_modifier = {
+			RES = sr_zro
+			MOD_1 = mod_tt_economics_revolution_1
+			MOD_2 = mod_tt_economics_revolution_2
+			MOD_3 = mod_tt_economics_revolution_3
+			MOD_4 = mod_tt_economics_revolution_4
+			MOD_5 = mod_tt_economics_revolution_5
+			COST_1 =  500
+			COST_2 = 1000
+			COST_3 = 1500
+			COST_4 = 2000
+			COST_5 = 2500
 		}
 	}
 }
@@ -112,90 +40,18 @@ button_tt_economics_revolution_marketplace = {
 		has_modifier = mod_tt_economics_revolution_5
 	}
 	effect = {
-		#1
-		if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_economics_revolution_marketplace }
-				resource_stockpile_compare = { resource = sr_zro value >= 1000 }
-			}
-			add_resource = { sr_zro = -1000 }
-			add_modifier = { modifier = "mod_tt_economics_revolution_marketplace_1" days = -1 }
-			set_country_flag = flag_tt_economics_revolution_marketplace
-		}
-		else_if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_economics_revolution_marketplace }
-				resource_stockpile_compare = { resource = sr_zro value < 1000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro2
-		}
-		#2
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_marketplace_1
-				resource_stockpile_compare = { resource = sr_zro value >= 2000 }
-			}
-			add_resource = { sr_zro = -2000 }
-			remove_modifier = "mod_tt_economics_revolution_marketplace_1"
-			add_modifier = { modifier = "mod_tt_economics_revolution_marketplace_2" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_marketplace_1
-				resource_stockpile_compare = { resource = sr_zro value < 2000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro2
-		}
-		#3
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_marketplace_2
-				resource_stockpile_compare = { resource = sr_zro value >= 3000 }
-			}
-			add_resource = { sr_zro = -3000 }
-			remove_modifier = "mod_tt_economics_revolution_marketplace_2"
-			add_modifier = { modifier = "mod_tt_economics_revolution_marketplace_3" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_marketplace_2
-				resource_stockpile_compare = { resource = sr_zro value < 3000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro2
-		}
-		#4
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_marketplace_3
-				resource_stockpile_compare = { resource = sr_zro value >= 4000 }
-			}
-			add_resource = { sr_zro = -4000 }
-			remove_modifier = "mod_tt_economics_revolution_marketplace_3"
-			add_modifier = { modifier = "mod_tt_economics_revolution_marketplace_4" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_marketplace_3
-				resource_stockpile_compare = { resource = sr_zro value < 4000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro2
-		}
-		#5
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_marketplace_4
-				resource_stockpile_compare = { resource = sr_zro value >= 5000 }
-			}
-			add_resource = { sr_zro = -5000 }
-			remove_modifier = "mod_tt_economics_revolution_marketplace_4"
-			add_modifier = { modifier = "mod_tt_economics_revolution_marketplace_5" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_marketplace_4
-				resource_stockpile_compare = { resource = sr_zro value < 5000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro2
+		RP_add_revolution_modifier = {
+			RES = sr_zro
+			MOD_1 = mod_tt_economics_revolution_marketplace_1
+			MOD_2 = mod_tt_economics_revolution_marketplace_2
+			MOD_3 = mod_tt_economics_revolution_marketplace_3
+			MOD_4 = mod_tt_economics_revolution_marketplace_4
+			MOD_5 = mod_tt_economics_revolution_marketplace_5
+			COST_1 = 1000
+			COST_2 = 2000
+			COST_3 = 3000
+			COST_4 = 4000
+			COST_5 = 5000
 		}
 	}
 }
@@ -205,90 +61,18 @@ button_tt_economics_revolution_marketplace_1 = {
 		has_modifier = mod_tt_economics_revolution_marketplace_5
 	}
 	effect = {
-		#1
-		if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_economics_revolution_marketplace_1 }
-				resource_stockpile_compare = { resource = sr_zro value >= 2000 }
-			}
-			add_resource = { sr_zro = -2000 }
-			add_modifier = { modifier = "mod_tt_economics_revolution_marketplace_1_1" days = -1 }
-			set_country_flag = flag_tt_economics_revolution_marketplace_1
-		}
-		else_if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_economics_revolution_marketplace_1 }
-				resource_stockpile_compare = { resource = sr_zro value < 2000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro3
-		}
-		#2
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_marketplace_1_1
-				resource_stockpile_compare = { resource = sr_zro value >= 4000 }
-			}
-			add_resource = { sr_zro = -4000 }
-			remove_modifier = "mod_tt_economics_revolution_marketplace_1_1"
-			add_modifier = { modifier = "mod_tt_economics_revolution_marketplace_1_2" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_marketplace_1_1
-				resource_stockpile_compare = { resource = sr_zro value < 4000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro3
-		}
-		#3
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_marketplace_1_2
-				resource_stockpile_compare = { resource = sr_zro value >= 6000 }
-			}
-			add_resource = { sr_zro = -6000 }
-			remove_modifier = "mod_tt_economics_revolution_marketplace_1_2"
-			add_modifier = { modifier = "mod_tt_economics_revolution_marketplace_1_3" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_marketplace_1_2
-				resource_stockpile_compare = { resource = sr_zro value < 6000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro3
-		}
-		#4
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_marketplace_1_3
-				resource_stockpile_compare = { resource = sr_zro value >= 8000 }
-			}
-			add_resource = { sr_zro = -8000 }
-			remove_modifier = "mod_tt_economics_revolution_marketplace_1_3"
-			add_modifier = { modifier = "mod_tt_economics_revolution_marketplace_1_4" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_marketplace_1_3
-				resource_stockpile_compare = { resource = sr_zro value < 8000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro3
-		}
-		#5
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_marketplace_1_4
-				resource_stockpile_compare = { resource = sr_zro value >= 10000 }
-			}
-			add_resource = { sr_zro = -10000 }
-			remove_modifier = "mod_tt_economics_revolution_marketplace_1_4"
-			add_modifier = { modifier = "mod_tt_economics_revolution_marketplace_1_5" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_marketplace_1_4
-				resource_stockpile_compare = { resource = sr_zro value < 10000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro3
+		RP_add_revolution_modifier = {
+			RES = sr_zro
+			MOD_1 = mod_tt_economics_revolution_marketplace_1_1
+			MOD_2 = mod_tt_economics_revolution_marketplace_1_2
+			MOD_3 = mod_tt_economics_revolution_marketplace_1_3
+			MOD_4 = mod_tt_economics_revolution_marketplace_1_4
+			MOD_5 = mod_tt_economics_revolution_marketplace_1_5
+			COST_1 =  2000
+			COST_2 =  4000
+			COST_3 =  6000
+			COST_4 =  8000
+			COST_5 = 10000
 		}
 	}
 }
@@ -298,90 +82,18 @@ button_tt_economics_revolution_marketplace_2 = {
 		has_modifier = mod_tt_economics_revolution_marketplace_5
 	}
 	effect = {
-		#1
-		if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_economics_revolution_marketplace_2 }
-				resource_stockpile_compare = { resource = sr_zro value >= 2000 }
-			}
-			add_resource = { sr_zro = -2000 }
-			add_modifier = { modifier = "mod_tt_economics_revolution_marketplace_2_1" days = -1 }
-			set_country_flag = flag_tt_economics_revolution_marketplace_2
-		}
-		else_if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_economics_revolution_marketplace_2 }
-				resource_stockpile_compare = { resource = sr_zro value < 2000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro3
-		}
-		#2
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_marketplace_2_1
-				resource_stockpile_compare = { resource = sr_zro value >= 4000 }
-			}
-			add_resource = { sr_zro = -4000 }
-			remove_modifier = "mod_tt_economics_revolution_marketplace_2_1"
-			add_modifier = { modifier = "mod_tt_economics_revolution_marketplace_2_2" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_marketplace_2_1
-				resource_stockpile_compare = { resource = sr_zro value < 4000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro3
-		}
-		#3
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_marketplace_2_2
-				resource_stockpile_compare = { resource = sr_zro value >= 6000 }
-			}
-			add_resource = { sr_zro = -6000 }
-			remove_modifier = "mod_tt_economics_revolution_marketplace_2_2"
-			add_modifier = { modifier = "mod_tt_economics_revolution_marketplace_2_3" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_marketplace_2_2
-				resource_stockpile_compare = { resource = sr_zro value < 6000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro3
-		}
-		#4
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_marketplace_2_3
-				resource_stockpile_compare = { resource = sr_zro value >= 8000 }
-			}
-			add_resource = { sr_zro = -8000 }
-			remove_modifier = "mod_tt_economics_revolution_marketplace_2_3"
-			add_modifier = { modifier = "mod_tt_economics_revolution_marketplace_2_4" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_marketplace_2_3
-				resource_stockpile_compare = { resource = sr_zro value < 8000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro3
-		}
-		#5
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_marketplace_2_4
-				resource_stockpile_compare = { resource = sr_zro value >= 10000 }
-			}
-			add_resource = { sr_zro = -10000 }
-			remove_modifier = "mod_tt_economics_revolution_marketplace_2_4"
-			add_modifier = { modifier = "mod_tt_economics_revolution_marketplace_2_5" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_marketplace_2_4
-				resource_stockpile_compare = { resource = sr_zro value < 10000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro3
+		RP_add_revolution_modifier = {
+			RES = sr_zro
+			MOD_1 = mod_tt_economics_revolution_marketplace_2_1
+			MOD_2 = mod_tt_economics_revolution_marketplace_2_2
+			MOD_3 = mod_tt_economics_revolution_marketplace_2_3
+			MOD_4 = mod_tt_economics_revolution_marketplace_2_4
+			MOD_5 = mod_tt_economics_revolution_marketplace_2_5
+			COST_1 =  2000
+			COST_2 =  4000
+			COST_3 =  6000
+			COST_4 =  8000
+			COST_5 = 10000
 		}
 	}
 }
@@ -391,90 +103,18 @@ button_tt_economics_revolution_marketplace_3 = {
 		has_modifier = mod_tt_economics_revolution_marketplace_5
 	}
 	effect = {
-		#1
-		if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_economics_revolution_marketplace_3 }
-				resource_stockpile_compare = { resource = sr_zro value >= 2000 }
-			}
-			add_resource = { sr_zro = -2000 }
-			add_modifier = { modifier = "mod_tt_economics_revolution_marketplace_3_1" days = -1 }
-			set_country_flag = flag_tt_economics_revolution_marketplace_3
-		}
-		else_if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_economics_revolution_marketplace_3 }
-				resource_stockpile_compare = { resource = sr_zro value < 2000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro3
-		}
-		#2
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_marketplace_3_1
-				resource_stockpile_compare = { resource = sr_zro value >= 4000 }
-			}
-			add_resource = { sr_zro = -4000 }
-			remove_modifier = "mod_tt_economics_revolution_marketplace_3_1"
-			add_modifier = { modifier = "mod_tt_economics_revolution_marketplace_3_2" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_marketplace_3_1
-				resource_stockpile_compare = { resource = sr_zro value < 4000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro3
-		}
-		#3
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_marketplace_3_2
-				resource_stockpile_compare = { resource = sr_zro value >= 6000 }
-			}
-			add_resource = { sr_zro = -6000 }
-			remove_modifier = "mod_tt_economics_revolution_marketplace_3_2"
-			add_modifier = { modifier = "mod_tt_economics_revolution_marketplace_3_3" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_marketplace_3_2
-				resource_stockpile_compare = { resource = sr_zro value < 6000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro3
-		}
-		#4
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_marketplace_3_3
-				resource_stockpile_compare = { resource = sr_zro value >= 8000 }
-			}
-			add_resource = { sr_zro = -8000 }
-			remove_modifier = "mod_tt_economics_revolution_marketplace_3_3"
-			add_modifier = { modifier = "mod_tt_economics_revolution_marketplace_3_4" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_marketplace_3_3
-				resource_stockpile_compare = { resource = sr_zro value < 8000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro3
-		}
-		#5
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_marketplace_3_4
-				resource_stockpile_compare = { resource = sr_zro value >= 10000 }
-			}
-			add_resource = { sr_zro = -10000 }
-			remove_modifier = "mod_tt_economics_revolution_marketplace_3_4"
-			add_modifier = { modifier = "mod_tt_economics_revolution_marketplace_3_5" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_marketplace_3_4
-				resource_stockpile_compare = { resource = sr_zro value < 10000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro3
+		RP_add_revolution_modifier = {
+			RES = sr_zro
+			MOD_1 = mod_tt_economics_revolution_marketplace_3_1
+			MOD_2 = mod_tt_economics_revolution_marketplace_3_2
+			MOD_3 = mod_tt_economics_revolution_marketplace_3_3
+			MOD_4 = mod_tt_economics_revolution_marketplace_3_4
+			MOD_5 = mod_tt_economics_revolution_marketplace_3_5
+			COST_1 =  2000
+			COST_2 =  4000
+			COST_3 =  6000
+			COST_4 =  8000
+			COST_5 = 10000
 		}
 	}
 }
@@ -484,90 +124,18 @@ button_tt_economics_revolution_job = {
 		has_modifier = mod_tt_economics_revolution_5
 	}
 	effect = {
-		#1
-		if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_economics_revolution_job }
-				resource_stockpile_compare = { resource = sr_zro value >= 1000 }
-			}
-			add_resource = { sr_zro = -1000 }
-			add_modifier = { modifier = "mod_tt_economics_revolution_job_1" days = -1 }
-			set_country_flag = flag_tt_economics_revolution_job
-		}
-		else_if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_economics_revolution_job }
-				resource_stockpile_compare = { resource = sr_zro value < 1000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro2
-		}
-		#2
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_job_1
-				resource_stockpile_compare = { resource = sr_zro value >= 2000 }
-			}
-			add_resource = { sr_zro = -2000 }
-			remove_modifier = "mod_tt_economics_revolution_job_1"
-			add_modifier = { modifier = "mod_tt_economics_revolution_job_2" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_job_1
-				resource_stockpile_compare = { resource = sr_zro value < 2000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro2
-		}
-		#3
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_job_2
-				resource_stockpile_compare = { resource = sr_zro value >= 3000 }
-			}
-			add_resource = { sr_zro = -3000 }
-			remove_modifier = "mod_tt_economics_revolution_job_2"
-			add_modifier = { modifier = "mod_tt_economics_revolution_job_3" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_job_2
-				resource_stockpile_compare = { resource = sr_zro value < 3000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro2
-		}
-		#4
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_job_3
-				resource_stockpile_compare = { resource = sr_zro value >= 4000 }
-			}
-			add_resource = { sr_zro = -4000 }
-			remove_modifier = "mod_tt_economics_revolution_job_3"
-			add_modifier = { modifier = "mod_tt_economics_revolution_job_4" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_job_3
-				resource_stockpile_compare = { resource = sr_zro value < 4000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro2
-		}
-		#5
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_job_4
-				resource_stockpile_compare = { resource = sr_zro value >= 5000 }
-			}
-			add_resource = { sr_zro = -5000 }
-			remove_modifier = "mod_tt_economics_revolution_job_4"
-			add_modifier = { modifier = "mod_tt_economics_revolution_job_5" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_job_4
-				resource_stockpile_compare = { resource = sr_zro value < 5000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro2
+		RP_add_revolution_modifier = {
+			RES = sr_zro
+			MOD_1 = mod_tt_economics_revolution_job_1
+			MOD_2 = mod_tt_economics_revolution_job_2
+			MOD_3 = mod_tt_economics_revolution_job_3
+			MOD_4 = mod_tt_economics_revolution_job_4
+			MOD_5 = mod_tt_economics_revolution_job_5
+			COST_1 = 1000
+			COST_2 = 2000
+			COST_3 = 3000
+			COST_4 = 4000
+			COST_5 = 5000
 		}
 	}
 }
@@ -577,90 +145,18 @@ button_tt_economics_revolution_job_1 = {
 		has_modifier = mod_tt_economics_revolution_job_5
 	}
 	effect = {
-		#1
-		if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_economics_revolution_job_1 }
-				resource_stockpile_compare = { resource = sr_zro value >= 2000 }
-			}
-			add_resource = { sr_zro = -2000 }
-			add_modifier = { modifier = "mod_tt_economics_revolution_job_1_1" days = -1 }
-			set_country_flag = flag_tt_economics_revolution_job_1
-		}
-		else_if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_economics_revolution_job_1 }
-				resource_stockpile_compare = { resource = sr_zro value < 2000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro3
-		}
-		#2
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_job_1_1
-				resource_stockpile_compare = { resource = sr_zro value >= 4000 }
-			}
-			add_resource = { sr_zro = -4000 }
-			remove_modifier = "mod_tt_economics_revolution_job_1_1"
-			add_modifier = { modifier = "mod_tt_economics_revolution_job_1_2" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_job_1_1
-				resource_stockpile_compare = { resource = sr_zro value < 4000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro3
-		}
-		#3
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_job_1_2
-				resource_stockpile_compare = { resource = sr_zro value >= 6000 }
-			}
-			add_resource = { sr_zro = -6000 }
-			remove_modifier = "mod_tt_economics_revolution_job_1_2"
-			add_modifier = { modifier = "mod_tt_economics_revolution_job_1_3" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_job_1_2
-				resource_stockpile_compare = { resource = sr_zro value < 6000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro3
-		}
-		#4
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_job_1_3
-				resource_stockpile_compare = { resource = sr_zro value >= 8000 }
-			}
-			add_resource = { sr_zro = -8000 }
-			remove_modifier = "mod_tt_economics_revolution_job_1_3"
-			add_modifier = { modifier = "mod_tt_economics_revolution_job_1_4" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_job_1_3
-				resource_stockpile_compare = { resource = sr_zro value < 8000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro3
-		}
-		#5
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_job_1_4
-				resource_stockpile_compare = { resource = sr_zro value >= 10000 }
-			}
-			add_resource = { sr_zro = -10000 }
-			remove_modifier = "mod_tt_economics_revolution_job_1_4"
-			add_modifier = { modifier = "mod_tt_economics_revolution_job_1_5" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_job_1_4
-				resource_stockpile_compare = { resource = sr_zro value < 10000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro3
+		RP_add_revolution_modifier = {
+			RES = sr_zro
+			MOD_1 = mod_tt_economics_revolution_job_1_1
+			MOD_2 = mod_tt_economics_revolution_job_1_2
+			MOD_3 = mod_tt_economics_revolution_job_1_3
+			MOD_4 = mod_tt_economics_revolution_job_1_4
+			MOD_5 = mod_tt_economics_revolution_job_1_5
+			COST_1 =  2000
+			COST_2 =  4000
+			COST_3 =  6000
+			COST_4 =  8000
+			COST_5 = 10000
 		}
 	}
 }
@@ -670,90 +166,18 @@ button_tt_economics_revolution_job_2 = {
 		has_modifier = mod_tt_economics_revolution_job_5
 	}
 	effect = {
-		#1
-		if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_economics_revolution_job_2 }
-				resource_stockpile_compare = { resource = sr_zro value >= 2000 }
-			}
-			add_resource = { sr_zro = -2000 }
-			add_modifier = { modifier = "mod_tt_economics_revolution_job_2_1" days = -1 }
-			set_country_flag = flag_tt_economics_revolution_job_2
-		}
-		else_if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_economics_revolution_job_2 }
-				resource_stockpile_compare = { resource = sr_zro value < 2000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro3
-		}
-		#2
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_job_2_1
-				resource_stockpile_compare = { resource = sr_zro value >= 4000 }
-			}
-			add_resource = { sr_zro = -4000 }
-			remove_modifier = "mod_tt_economics_revolution_job_2_1"
-			add_modifier = { modifier = "mod_tt_economics_revolution_job_2_2" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_job_2_1
-				resource_stockpile_compare = { resource = sr_zro value < 4000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro3
-		}
-		#3
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_job_2_2
-				resource_stockpile_compare = { resource = sr_zro value >= 6000 }
-			}
-			add_resource = { sr_zro = -6000 }
-			remove_modifier = "mod_tt_economics_revolution_job_2_2"
-			add_modifier = { modifier = "mod_tt_economics_revolution_job_2_3" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_job_2_2
-				resource_stockpile_compare = { resource = sr_zro value < 6000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro3
-		}
-		#4
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_job_2_3
-				resource_stockpile_compare = { resource = sr_zro value >= 8000 }
-			}
-			add_resource = { sr_zro = -8000 }
-			remove_modifier = "mod_tt_economics_revolution_job_2_3"
-			add_modifier = { modifier = "mod_tt_economics_revolution_job_2_4" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_job_2_3
-				resource_stockpile_compare = { resource = sr_zro value < 8000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro3
-		}
-		#5
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_job_2_4
-				resource_stockpile_compare = { resource = sr_zro value >= 10000 }
-			}
-			add_resource = { sr_zro = -10000 }
-			remove_modifier = "mod_tt_economics_revolution_job_2_4"
-			add_modifier = { modifier = "mod_tt_economics_revolution_job_2_5" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_job_2_4
-				resource_stockpile_compare = { resource = sr_zro value < 10000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro3
+		RP_add_revolution_modifier = {
+			RES = sr_zro
+			MOD_1 = mod_tt_economics_revolution_job_2_1
+			MOD_2 = mod_tt_economics_revolution_job_2_2
+			MOD_3 = mod_tt_economics_revolution_job_2_3
+			MOD_4 = mod_tt_economics_revolution_job_2_4
+			MOD_5 = mod_tt_economics_revolution_job_2_5
+			COST_1 =  2000
+			COST_2 =  4000
+			COST_3 =  6000
+			COST_4 =  8000
+			COST_5 = 10000
 		}
 	}
 }
@@ -763,90 +187,18 @@ button_tt_economics_revolution_job_3 = {
 		has_modifier = mod_tt_economics_revolution_job_5
 	}
 	effect = {
-		#1
-		if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_economics_revolution_job_3 }
-				resource_stockpile_compare = { resource = sr_zro value >= 2000 }
-			}
-			add_resource = { sr_zro = -2000 }
-			add_modifier = { modifier = "mod_tt_economics_revolution_job_3_1" days = -1 }
-			set_country_flag = flag_tt_economics_revolution_job_3
-		}
-		else_if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_economics_revolution_job_3 }
-				resource_stockpile_compare = { resource = sr_zro value < 2000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro3
-		}
-		#2
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_job_3_1
-				resource_stockpile_compare = { resource = sr_zro value >= 4000 }
-			}
-			add_resource = { sr_zro = -4000 }
-			remove_modifier = "mod_tt_economics_revolution_job_3_1"
-			add_modifier = { modifier = "mod_tt_economics_revolution_job_3_2" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_job_3_1
-				resource_stockpile_compare = { resource = sr_zro value < 4000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro3
-		}
-		#3
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_job_3_2
-				resource_stockpile_compare = { resource = sr_zro value >= 6000 }
-			}
-			add_resource = { sr_zro = -6000 }
-			remove_modifier = "mod_tt_economics_revolution_job_3_2"
-			add_modifier = { modifier = "mod_tt_economics_revolution_job_3_3" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_job_3_2
-				resource_stockpile_compare = { resource = sr_zro value < 6000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro3
-		}
-		#4
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_job_3_3
-				resource_stockpile_compare = { resource = sr_zro value >= 8000 }
-			}
-			add_resource = { sr_zro = -8000 }
-			remove_modifier = "mod_tt_economics_revolution_job_3_3"
-			add_modifier = { modifier = "mod_tt_economics_revolution_job_3_4" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_job_3_3
-				resource_stockpile_compare = { resource = sr_zro value < 8000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro3
-		}
-		#5
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_job_3_4
-				resource_stockpile_compare = { resource = sr_zro value >= 10000 }
-			}
-			add_resource = { sr_zro = -10000 }
-			remove_modifier = "mod_tt_economics_revolution_job_3_4"
-			add_modifier = { modifier = "mod_tt_economics_revolution_job_3_5" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_job_3_4
-				resource_stockpile_compare = { resource = sr_zro value < 10000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro3
+		RP_add_revolution_modifier = {
+			RES = sr_zro
+			MOD_1 = mod_tt_economics_revolution_job_3_1
+			MOD_2 = mod_tt_economics_revolution_job_3_2
+			MOD_3 = mod_tt_economics_revolution_job_3_3
+			MOD_4 = mod_tt_economics_revolution_job_3_4
+			MOD_5 = mod_tt_economics_revolution_job_3_5
+			COST_1 =  2000
+			COST_2 =  4000
+			COST_3 =  6000
+			COST_4 =  8000
+			COST_5 = 10000
 		}
 	}
 }
@@ -856,90 +208,18 @@ button_tt_economics_revolution_building = {
 		has_modifier = mod_tt_economics_revolution_5
 	}
 	effect = {
-		#1
-		if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_economics_revolution_building }
-				resource_stockpile_compare = { resource = sr_zro value >= 1000 }
-			}
-			add_resource = { sr_zro = -1000 }
-			add_modifier = { modifier = "mod_tt_economics_revolution_building_1" days = -1 }
-			set_country_flag = flag_tt_economics_revolution_building
-		}
-		else_if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_economics_revolution_building }
-				resource_stockpile_compare = { resource = sr_zro value < 1000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro2
-		}
-		#2
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_building_1
-				resource_stockpile_compare = { resource = sr_zro value >= 2000 }
-			}
-			add_resource = { sr_zro = -2000 }
-			remove_modifier = "mod_tt_economics_revolution_building_1"
-			add_modifier = { modifier = "mod_tt_economics_revolution_building_2" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_building_1
-				resource_stockpile_compare = { resource = sr_zro value < 2000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro2
-		}
-		#3
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_building_2
-				resource_stockpile_compare = { resource = sr_zro value >= 3000 }
-			}
-			add_resource = { sr_zro = -3000 }
-			remove_modifier = "mod_tt_economics_revolution_building_2"
-			add_modifier = { modifier = "mod_tt_economics_revolution_building_3" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_building_2
-				resource_stockpile_compare = { resource = sr_zro value < 3000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro2
-		}
-		#4
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_building_3
-				resource_stockpile_compare = { resource = sr_zro value >= 4000 }
-			}
-			add_resource = { sr_zro = -4000 }
-			remove_modifier = "mod_tt_economics_revolution_building_3"
-			add_modifier = { modifier = "mod_tt_economics_revolution_building_4" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_building_3
-				resource_stockpile_compare = { resource = sr_zro value < 4000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro2
-		}
-		#5
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_building_4
-				resource_stockpile_compare = { resource = sr_zro value >= 5000 }
-			}
-			add_resource = { sr_zro = -5000 }
-			remove_modifier = "mod_tt_economics_revolution_building_4"
-			add_modifier = { modifier = "mod_tt_economics_revolution_building_5" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_building_4
-				resource_stockpile_compare = { resource = sr_zro value < 5000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro2
+		RP_add_revolution_modifier = {
+			RES = sr_zro
+			MOD_1 = mod_tt_economics_revolution_building_1
+			MOD_2 = mod_tt_economics_revolution_building_2
+			MOD_3 = mod_tt_economics_revolution_building_3
+			MOD_4 = mod_tt_economics_revolution_building_4
+			MOD_5 = mod_tt_economics_revolution_building_5
+			COST_1 = 1000
+			COST_2 = 2000
+			COST_3 = 3000
+			COST_4 = 4000
+			COST_5 = 5000
 		}
 	}
 }
@@ -949,90 +229,18 @@ button_tt_economics_revolution_building_1 = {
 		has_modifier = mod_tt_economics_revolution_building_5
 	}
 	effect = {
-		#1
-		if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_economics_revolution_building_1 }
-				resource_stockpile_compare = { resource = sr_zro value >= 2000 }
-			}
-			add_resource = { sr_zro = -2000 }
-			add_modifier = { modifier = "mod_tt_economics_revolution_building_1_1" days = -1 }
-			set_country_flag = flag_tt_economics_revolution_building_1
-		}
-		else_if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_economics_revolution_building_1 }
-				resource_stockpile_compare = { resource = sr_zro value < 2000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro3
-		}
-		#2
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_building_1_1
-				resource_stockpile_compare = { resource = sr_zro value >= 4000 }
-			}
-			add_resource = { sr_zro = -4000 }
-			remove_modifier = "mod_tt_economics_revolution_building_1_1"
-			add_modifier = { modifier = "mod_tt_economics_revolution_building_1_2" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_building_1_1
-				resource_stockpile_compare = { resource = sr_zro value < 4000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro3
-		}
-		#3
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_building_1_2
-				resource_stockpile_compare = { resource = sr_zro value >= 6000 }
-			}
-			add_resource = { sr_zro = -6000 }
-			remove_modifier = "mod_tt_economics_revolution_building_1_2"
-			add_modifier = { modifier = "mod_tt_economics_revolution_building_1_3" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_building_1_2
-				resource_stockpile_compare = { resource = sr_zro value < 6000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro3
-		}
-		#4
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_building_1_3
-				resource_stockpile_compare = { resource = sr_zro value >= 8000 }
-			}
-			add_resource = { sr_zro = -8000 }
-			remove_modifier = "mod_tt_economics_revolution_building_1_3"
-			add_modifier = { modifier = "mod_tt_economics_revolution_building_1_4" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_building_1_3
-				resource_stockpile_compare = { resource = sr_zro value < 8000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro3
-		}
-		#5
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_building_1_4
-				resource_stockpile_compare = { resource = sr_zro value >= 10000 }
-			}
-			add_resource = { sr_zro = -10000 }
-			remove_modifier = "mod_tt_economics_revolution_building_1_4"
-			add_modifier = { modifier = "mod_tt_economics_revolution_building_1_5" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_building_1_4
-				resource_stockpile_compare = { resource = sr_zro value < 10000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro3
+		RP_add_revolution_modifier = {
+			RES = sr_zro
+			MOD_1 = mod_tt_economics_revolution_building_1_1
+			MOD_2 = mod_tt_economics_revolution_building_1_2
+			MOD_3 = mod_tt_economics_revolution_building_1_3
+			MOD_4 = mod_tt_economics_revolution_building_1_4
+			MOD_5 = mod_tt_economics_revolution_building_1_5
+			COST_1 =  2000
+			COST_2 =  4000
+			COST_3 =  6000
+			COST_4 =  8000
+			COST_5 = 10000
 		}
 	}
 }
@@ -1042,90 +250,18 @@ button_tt_economics_revolution_building_2 = {
 		has_modifier = mod_tt_economics_revolution_building_5
 	}
 	effect = {
-		#1
-		if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_economics_revolution_building_2 }
-				resource_stockpile_compare = { resource = sr_zro value >= 2000 }
-			}
-			add_resource = { sr_zro = -2000 }
-			add_modifier = { modifier = "mod_tt_economics_revolution_building_2_1" days = -1 }
-			set_country_flag = flag_tt_economics_revolution_building_2
-		}
-		else_if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_economics_revolution_building_2 }
-				resource_stockpile_compare = { resource = sr_zro value < 2000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro3
-		}
-		#2
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_building_2_1
-				resource_stockpile_compare = { resource = sr_zro value >= 4000 }
-			}
-			add_resource = { sr_zro = -4000 }
-			remove_modifier = "mod_tt_economics_revolution_building_2_1"
-			add_modifier = { modifier = "mod_tt_economics_revolution_building_2_2" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_building_2_1
-				resource_stockpile_compare = { resource = sr_zro value < 4000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro3
-		}
-		#3
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_building_2_2
-				resource_stockpile_compare = { resource = sr_zro value >= 6000 }
-			}
-			add_resource = { sr_zro = -6000 }
-			remove_modifier = "mod_tt_economics_revolution_building_2_2"
-			add_modifier = { modifier = "mod_tt_economics_revolution_building_2_3" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_building_2_2
-				resource_stockpile_compare = { resource = sr_zro value < 6000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro3
-		}
-		#4
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_building_2_3
-				resource_stockpile_compare = { resource = sr_zro value >= 8000 }
-			}
-			add_resource = { sr_zro = -8000 }
-			remove_modifier = "mod_tt_economics_revolution_building_2_3"
-			add_modifier = { modifier = "mod_tt_economics_revolution_building_2_4" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_building_2_3
-				resource_stockpile_compare = { resource = sr_zro value < 8000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro3
-		}
-		#5
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_building_2_4
-				resource_stockpile_compare = { resource = sr_zro value >= 10000 }
-			}
-			add_resource = { sr_zro = -10000 }
-			remove_modifier = "mod_tt_economics_revolution_building_2_4"
-			add_modifier = { modifier = "mod_tt_economics_revolution_building_2_5" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_building_2_4
-				resource_stockpile_compare = { resource = sr_zro value < 10000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro3
+		RP_add_revolution_modifier = {
+			RES = sr_zro
+			MOD_1 = mod_tt_economics_revolution_building_2_1
+			MOD_2 = mod_tt_economics_revolution_building_2_2
+			MOD_3 = mod_tt_economics_revolution_building_2_3
+			MOD_4 = mod_tt_economics_revolution_building_2_4
+			MOD_5 = mod_tt_economics_revolution_building_2_5
+			COST_1 =  2000
+			COST_2 =  4000
+			COST_3 =  6000
+			COST_4 =  8000
+			COST_5 = 10000
 		}
 	}
 }
@@ -1135,90 +271,18 @@ button_tt_economics_revolution_building_3 = {
 		has_modifier = mod_tt_economics_revolution_building_5
 	}
 	effect = {
-		#1
-		if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_economics_revolution_building_3 }
-				resource_stockpile_compare = { resource = sr_zro value >= 2000 }
-			}
-			add_resource = { sr_zro = -2000 }
-			add_modifier = { modifier = "mod_tt_economics_revolution_building_3_1" days = -1 }
-			set_country_flag = flag_tt_economics_revolution_building_3
-		}
-		else_if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_economics_revolution_building_3 }
-				resource_stockpile_compare = { resource = sr_zro value < 2000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro3
-		}
-		#2
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_building_3_1
-				resource_stockpile_compare = { resource = sr_zro value >= 4000 }
-			}
-			add_resource = { sr_zro = -4000 }
-			remove_modifier = "mod_tt_economics_revolution_building_3_1"
-			add_modifier = { modifier = "mod_tt_economics_revolution_building_3_2" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_building_3_1
-				resource_stockpile_compare = { resource = sr_zro value < 4000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro3
-		}
-		#3
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_building_3_2
-				resource_stockpile_compare = { resource = sr_zro value >= 6000 }
-			}
-			add_resource = { sr_zro = -6000 }
-			remove_modifier = "mod_tt_economics_revolution_building_3_2"
-			add_modifier = { modifier = "mod_tt_economics_revolution_building_3_3" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_building_3_2
-				resource_stockpile_compare = { resource = sr_zro value < 6000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro3
-		}
-		#4
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_building_3_3
-				resource_stockpile_compare = { resource = sr_zro value >= 8000 }
-			}
-			add_resource = { sr_zro = -8000 }
-			remove_modifier = "mod_tt_economics_revolution_building_3_3"
-			add_modifier = { modifier = "mod_tt_economics_revolution_building_3_4" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_building_3_3
-				resource_stockpile_compare = { resource = sr_zro value < 8000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro3
-		}
-		#5
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_building_3_4
-				resource_stockpile_compare = { resource = sr_zro value >= 10000 }
-			}
-			add_resource = { sr_zro = -10000 }
-			remove_modifier = "mod_tt_economics_revolution_building_3_4"
-			add_modifier = { modifier = "mod_tt_economics_revolution_building_3_5" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_economics_revolution_building_3_4
-				resource_stockpile_compare = { resource = sr_zro value < 10000 }
-			}
-			custom_tooltip = stop_revolution_sr_zro3
+		RP_add_revolution_modifier = {
+			RES = sr_zro
+			MOD_1 = mod_tt_economics_revolution_building_3_1
+			MOD_2 = mod_tt_economics_revolution_building_3_2
+			MOD_3 = mod_tt_economics_revolution_building_3_3
+			MOD_4 = mod_tt_economics_revolution_building_3_4
+			MOD_5 = mod_tt_economics_revolution_building_3_5
+			COST_1 =  2000
+			COST_2 =  4000
+			COST_3 =  6000
+			COST_4 =  8000
+			COST_5 = 10000
 		}
 	}
 }
@@ -1228,90 +292,18 @@ button_tt_war_revolution = {
 		has_ascension_perk = ap_tt_reform_plane_2
 	}
 	effect = {
-		#1
-		if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_war_revolution }
-				resource_stockpile_compare = { resource = sr_living_metal value >= 750 }
-			}
-			add_resource = { sr_living_metal = -750 }
-			add_modifier = { modifier = "mod_tt_war_revolution_1" days = -1 }
-			set_country_flag = flag_tt_war_revolution
-		}
-		else_if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_war_revolution }
-				resource_stockpile_compare = { resource = sr_living_metal value < 750 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal1
-		}
-		#2
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_1
-				resource_stockpile_compare = { resource = sr_living_metal value >= 1500 }
-			}
-			add_resource = { sr_living_metal = -1500 }
-			remove_modifier = "mod_tt_war_revolution_1"
-			add_modifier = { modifier = "mod_tt_war_revolution_2" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_1
-				resource_stockpile_compare = { resource = sr_living_metal value < 1500 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal1
-		}
-		#3
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_2
-				resource_stockpile_compare = { resource = sr_living_metal value >= 2250 }
-			}
-			add_resource = { sr_living_metal = -2250 }
-			remove_modifier = "mod_tt_war_revolution_2"
-			add_modifier = { modifier = "mod_tt_war_revolution_3" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_2
-				resource_stockpile_compare = { resource = sr_living_metal value < 2250 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal1
-		}
-		#4
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_3
-				resource_stockpile_compare = { resource = sr_living_metal value >= 3000 }
-			}
-			add_resource = { sr_living_metal = -3000 }
-			remove_modifier = "mod_tt_war_revolution_3"
-			add_modifier = { modifier = "mod_tt_war_revolution_4" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_3
-				resource_stockpile_compare = { resource = sr_living_metal value < 3000 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal1
-		}
-		#5
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_4
-				resource_stockpile_compare = { resource = sr_living_metal value >= 3750 }
-			}
-			add_resource = { sr_living_metal = -3750 }
-			remove_modifier = "mod_tt_war_revolution_4"
-			add_modifier = { modifier = "mod_tt_war_revolution_5" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_4
-				resource_stockpile_compare = { resource = sr_living_metal value < 3750 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal1
+		RP_add_revolution_modifier = {
+			RES = sr_living_metal
+			MOD_1 = mod_tt_war_revolution_1
+			MOD_2 = mod_tt_war_revolution_2
+			MOD_3 = mod_tt_war_revolution_3
+			MOD_4 = mod_tt_war_revolution_4
+			MOD_5 = mod_tt_war_revolution_5
+			COST_1 =  750
+			COST_2 = 1500
+			COST_3 = 2250
+			COST_4 = 3000
+			COST_5 = 3750
 		}
 	}
 }
@@ -1321,90 +313,18 @@ button_tt_war_revolution_fleet = {
 		has_modifier = mod_tt_war_revolution_5
 	}
 	effect = {
-		#1
-		if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_war_revolution_fleet }
-				resource_stockpile_compare = { resource = sr_living_metal value >= 1500 }
-			}
-			add_resource = { sr_living_metal = -1500 }
-			add_modifier = { modifier = "mod_tt_war_revolution_fleet_1" days = -1 }
-			set_country_flag = flag_tt_war_revolution_fleet
-		}
-		else_if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_war_revolution_fleet }
-				resource_stockpile_compare = { resource = sr_living_metal value < 1500 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal2
-		}
-		#2
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fleet_1
-				resource_stockpile_compare = { resource = sr_living_metal value >= 3000 }
-			}
-			add_resource = { sr_living_metal = -3000 }
-			remove_modifier = "mod_tt_war_revolution_fleet_1"
-			add_modifier = { modifier = "mod_tt_war_revolution_fleet_2" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fleet_1
-				resource_stockpile_compare = { resource = sr_living_metal value < 3000 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal2
-		}
-		#3
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fleet_2
-				resource_stockpile_compare = { resource = sr_living_metal value >= 4500 }
-			}
-			add_resource = { sr_living_metal = -4500 }
-			remove_modifier = "mod_tt_war_revolution_fleet_2"
-			add_modifier = { modifier = "mod_tt_war_revolution_fleet_3" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fleet_2
-				resource_stockpile_compare = { resource = sr_living_metal value < 4500 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal2
-		}
-		#4
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fleet_3
-				resource_stockpile_compare = { resource = sr_living_metal value >= 6000 }
-			}
-			add_resource = { sr_living_metal = -6000 }
-			remove_modifier = "mod_tt_war_revolution_fleet_3"
-			add_modifier = { modifier = "mod_tt_war_revolution_fleet_4" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fleet_3
-				resource_stockpile_compare = { resource = sr_living_metal value < 6000 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal2
-		}
-		#5
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fleet_4
-				resource_stockpile_compare = { resource = sr_living_metal value >= 7500 }
-			}
-			add_resource = { sr_living_metal = -7500 }
-			remove_modifier = "mod_tt_war_revolution_fleet_4"
-			add_modifier = { modifier = "mod_tt_war_revolution_fleet_5" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fleet_4
-				resource_stockpile_compare = { resource = sr_living_metal value < 7500 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal2
+		RP_add_revolution_modifier = {
+			RES = sr_living_metal
+			MOD_1 = mod_tt_war_revolution_fleet_1
+			MOD_2 = mod_tt_war_revolution_fleet_2
+			MOD_3 = mod_tt_war_revolution_fleet_3
+			MOD_4 = mod_tt_war_revolution_fleet_4
+			MOD_5 = mod_tt_war_revolution_fleet_5
+			COST_1 = 1500
+			COST_2 = 3000
+			COST_3 = 4500
+			COST_4 = 6000
+			COST_5 = 7500
 		}
 	}
 }
@@ -1414,90 +334,18 @@ button_tt_war_revolution_fleet_1 = {
 		has_modifier = mod_tt_war_revolution_fleet_5
 	}
 	effect = {
-		#1
-		if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_war_revolution_fleet_1 }
-				resource_stockpile_compare = { resource = sr_living_metal value >= 3000 }
-			}
-			add_resource = { sr_living_metal = -3000 }
-			add_modifier = { modifier = "mod_tt_war_revolution_fleet_1_1" days = -1 }
-			set_country_flag = flag_tt_war_revolution_fleet_1
-		}
-		else_if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_war_revolution_fleet_1 }
-				resource_stockpile_compare = { resource = sr_living_metal value < 3000 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal3
-		}
-		#2
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fleet_1_1
-				resource_stockpile_compare = { resource = sr_living_metal value >= 6000 }
-			}
-			add_resource = { sr_living_metal = -6000 }
-			remove_modifier = "mod_tt_war_revolution_fleet_1_1"
-			add_modifier = { modifier = "mod_tt_war_revolution_fleet_1_2" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fleet_1_1
-				resource_stockpile_compare = { resource = sr_living_metal value < 6000 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal3
-		}
-		#3
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fleet_1_2
-				resource_stockpile_compare = { resource = sr_living_metal value >= 9000 }
-			}
-			add_resource = { sr_living_metal = -9000 }
-			remove_modifier = "mod_tt_war_revolution_fleet_1_2"
-			add_modifier = { modifier = "mod_tt_war_revolution_fleet_1_3" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fleet_1_2
-				resource_stockpile_compare = { resource = sr_living_metal value < 9000 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal3
-		}
-		#4
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fleet_1_3
-				resource_stockpile_compare = { resource = sr_living_metal value >= 12000 }
-			}
-			add_resource = { sr_living_metal = -12000 }
-			remove_modifier = "mod_tt_war_revolution_fleet_1_3"
-			add_modifier = { modifier = "mod_tt_war_revolution_fleet_1_4" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fleet_1_3
-				resource_stockpile_compare = { resource = sr_living_metal value < 12000 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal3
-		}
-		#5
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fleet_1_4
-				resource_stockpile_compare = { resource = sr_living_metal value >= 15000 }
-			}
-			add_resource = { sr_living_metal = -15000 }
-			remove_modifier = "mod_tt_war_revolution_fleet_1_4"
-			add_modifier = { modifier = "mod_tt_war_revolution_fleet_1_5" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fleet_1_4
-				resource_stockpile_compare = { resource = sr_living_metal value < 15000 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal3
+		RP_add_revolution_modifier = {
+			RES = sr_living_metal
+			MOD_1 = mod_tt_war_revolution_fleet_1_1
+			MOD_2 = mod_tt_war_revolution_fleet_1_2
+			MOD_3 = mod_tt_war_revolution_fleet_1_3
+			MOD_4 = mod_tt_war_revolution_fleet_1_4
+			MOD_5 = mod_tt_war_revolution_fleet_1_5
+			COST_1 =  3000
+			COST_2 =  6000
+			COST_3 =  9000
+			COST_4 = 12000
+			COST_5 = 15000
 		}
 	}
 }
@@ -1507,90 +355,18 @@ button_tt_war_revolution_fleet_2 = {
 		has_modifier = mod_tt_war_revolution_fleet_5
 	}
 	effect = {
-		#1
-		if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_war_revolution_fleet_2 }
-				resource_stockpile_compare = { resource = sr_living_metal value >= 3000 }
-			}
-			add_resource = { sr_living_metal = -3000 }
-			add_modifier = { modifier = "mod_tt_war_revolution_fleet_2_1" days = -1 }
-			set_country_flag = flag_tt_war_revolution_fleet_2
-		}
-		else_if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_war_revolution_fleet_2 }
-				resource_stockpile_compare = { resource = sr_living_metal value < 3000 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal3
-		}
-		#2
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fleet_2_1
-				resource_stockpile_compare = { resource = sr_living_metal value >= 6000 }
-			}
-			add_resource = { sr_living_metal = -6000 }
-			remove_modifier = "mod_tt_war_revolution_fleet_2_1"
-			add_modifier = { modifier = "mod_tt_war_revolution_fleet_2_2" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fleet_2_1
-				resource_stockpile_compare = { resource = sr_living_metal value < 6000 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal3
-		}
-		#3
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fleet_2_2
-				resource_stockpile_compare = { resource = sr_living_metal value >= 9000 }
-			}
-			add_resource = { sr_living_metal = -9000 }
-			remove_modifier = "mod_tt_war_revolution_fleet_2_2"
-			add_modifier = { modifier = "mod_tt_war_revolution_fleet_2_3" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fleet_2_2
-				resource_stockpile_compare = { resource = sr_living_metal value < 9000 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal3
-		}
-		#4
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fleet_2_3
-				resource_stockpile_compare = { resource = sr_living_metal value >= 12000 }
-			}
-			add_resource = { sr_living_metal = -12000 }
-			remove_modifier = "mod_tt_war_revolution_fleet_2_3"
-			add_modifier = { modifier = "mod_tt_war_revolution_fleet_2_4" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fleet_2_3
-				resource_stockpile_compare = { resource = sr_living_metal value < 12000 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal3
-		}
-		#5
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fleet_2_4
-				resource_stockpile_compare = { resource = sr_living_metal value >= 15000 }
-			}
-			add_resource = { sr_living_metal = -15000 }
-			remove_modifier = "mod_tt_war_revolution_fleet_2_4"
-			add_modifier = { modifier = "mod_tt_war_revolution_fleet_2_5" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fleet_2_4
-				resource_stockpile_compare = { resource = sr_living_metal value < 15000 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal3
+		RP_add_revolution_modifier = {
+			RES = sr_living_metal
+			MOD_1 = mod_tt_war_revolution_fleet_2_1
+			MOD_2 = mod_tt_war_revolution_fleet_2_2
+			MOD_3 = mod_tt_war_revolution_fleet_2_3
+			MOD_4 = mod_tt_war_revolution_fleet_2_4
+			MOD_5 = mod_tt_war_revolution_fleet_2_5
+			COST_1 =  3000
+			COST_2 =  6000
+			COST_3 =  9000
+			COST_4 = 12000
+			COST_5 = 15000
 		}
 	}
 }
@@ -1600,90 +376,18 @@ button_tt_war_revolution_fleet_3 = {
 		has_modifier = mod_tt_war_revolution_fleet_5
 	}
 	effect = {
-		#1
-		if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_war_revolution_fleet_3 }
-				resource_stockpile_compare = { resource = sr_living_metal value >= 3000 }
-			}
-			add_resource = { sr_living_metal = -3000 }
-			add_modifier = { modifier = "mod_tt_war_revolution_fleet_3_1" days = -1 }
-			set_country_flag = flag_tt_war_revolution_fleet_3
-		}
-		else_if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_war_revolution_fleet_3 }
-				resource_stockpile_compare = { resource = sr_living_metal value < 3000 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal3
-		}
-		#2
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fleet_3_1
-				resource_stockpile_compare = { resource = sr_living_metal value >= 6000 }
-			}
-			add_resource = { sr_living_metal = -6000 }
-			remove_modifier = "mod_tt_war_revolution_fleet_3_1"
-			add_modifier = { modifier = "mod_tt_war_revolution_fleet_3_2" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fleet_3_1
-				resource_stockpile_compare = { resource = sr_living_metal value < 6000 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal3
-		}
-		#3
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fleet_3_2
-				resource_stockpile_compare = { resource = sr_living_metal value >= 9000 }
-			}
-			add_resource = { sr_living_metal = -9000 }
-			remove_modifier = "mod_tt_war_revolution_fleet_3_2"
-			add_modifier = { modifier = "mod_tt_war_revolution_fleet_3_3" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fleet_3_2
-				resource_stockpile_compare = { resource = sr_living_metal value < 9000 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal3
-		}
-		#4
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fleet_3_3
-				resource_stockpile_compare = { resource = sr_living_metal value >= 12000 }
-			}
-			add_resource = { sr_living_metal = -12000 }
-			remove_modifier = "mod_tt_war_revolution_fleet_3_3"
-			add_modifier = { modifier = "mod_tt_war_revolution_fleet_3_4" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fleet_3_3
-				resource_stockpile_compare = { resource = sr_living_metal value < 12000 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal3
-		}
-		#5
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fleet_3_4
-				resource_stockpile_compare = { resource = sr_living_metal value >= 15000 }
-			}
-			add_resource = { sr_living_metal = -15000 }
-			remove_modifier = "mod_tt_war_revolution_fleet_3_4"
-			add_modifier = { modifier = "mod_tt_war_revolution_fleet_3_5" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fleet_3_4
-				resource_stockpile_compare = { resource = sr_living_metal value < 15000 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal3
+		RP_add_revolution_modifier = {
+			RES = sr_living_metal
+			MOD_1 = mod_tt_war_revolution_fleet_3_1
+			MOD_2 = mod_tt_war_revolution_fleet_3_2
+			MOD_3 = mod_tt_war_revolution_fleet_3_3
+			MOD_4 = mod_tt_war_revolution_fleet_3_4
+			MOD_5 = mod_tt_war_revolution_fleet_3_5
+			COST_1 =  3000
+			COST_2 =  6000
+			COST_3 =  9000
+			COST_4 = 12000
+			COST_5 = 15000
 		}
 	}
 }
@@ -1693,90 +397,18 @@ button_tt_war_revolution_fortress = {
 		has_modifier = mod_tt_war_revolution_5
 	}
 	effect = {
-		#1
-		if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_war_revolution_fortress }
-				resource_stockpile_compare = { resource = sr_living_metal value >= 1500 }
-			}
-			add_resource = { sr_living_metal = -1500 }
-			add_modifier = { modifier = "mod_tt_war_revolution_fortress_1" days = -1 }
-			set_country_flag = flag_tt_war_revolution_fortress
-		}
-		else_if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_war_revolution_fortress }
-				resource_stockpile_compare = { resource = sr_living_metal value < 1500 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal2
-		}
-		#2
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fortress_1
-				resource_stockpile_compare = { resource = sr_living_metal value >= 3000 }
-			}
-			add_resource = { sr_living_metal = -3000 }
-			remove_modifier = "mod_tt_war_revolution_fortress_1"
-			add_modifier = { modifier = "mod_tt_war_revolution_fortress_2" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fortress_1
-				resource_stockpile_compare = { resource = sr_living_metal value < 3000 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal2
-		}
-		#3
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fortress_2
-				resource_stockpile_compare = { resource = sr_living_metal value >= 4500 }
-			}
-			add_resource = { sr_living_metal = -4500 }
-			remove_modifier = "mod_tt_war_revolution_fortress_2"
-			add_modifier = { modifier = "mod_tt_war_revolution_fortress_3" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fortress_2
-				resource_stockpile_compare = { resource = sr_living_metal value < 4500 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal2
-		}
-		#4
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fortress_3
-				resource_stockpile_compare = { resource = sr_living_metal value >= 6000 }
-			}
-			add_resource = { sr_living_metal = -6000 }
-			remove_modifier = "mod_tt_war_revolution_fortress_3"
-			add_modifier = { modifier = "mod_tt_war_revolution_fortress_4" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fortress_3
-				resource_stockpile_compare = { resource = sr_living_metal value < 6000 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal2
-		}
-		#5
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fortress_4
-				resource_stockpile_compare = { resource = sr_living_metal value >= 7500 }
-			}
-			add_resource = { sr_living_metal = -7500 }
-			remove_modifier = "mod_tt_war_revolution_fortress_4"
-			add_modifier = { modifier = "mod_tt_war_revolution_fortress_5" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fortress_4
-				resource_stockpile_compare = { resource = sr_living_metal value < 7500 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal2
+		RP_add_revolution_modifier = {
+			RES = sr_living_metal
+			MOD_1 = mod_tt_war_revolution_fortress_1
+			MOD_2 = mod_tt_war_revolution_fortress_2
+			MOD_3 = mod_tt_war_revolution_fortress_3
+			MOD_4 = mod_tt_war_revolution_fortress_4
+			MOD_5 = mod_tt_war_revolution_fortress_5
+			COST_1 = 1500
+			COST_2 = 3000
+			COST_3 = 4500
+			COST_4 = 6000
+			COST_5 = 7500
 		}
 	}
 }
@@ -1786,90 +418,18 @@ button_tt_war_revolution_fortress_1 = {
 		has_modifier = mod_tt_war_revolution_fortress_5
 	}
 	effect = {
-		#1
-		if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_war_revolution_fortress_1 }
-				resource_stockpile_compare = { resource = sr_living_metal value >= 3000 }
-			}
-			add_resource = { sr_living_metal = -3000 }
-			add_modifier = { modifier = "mod_tt_war_revolution_fortress_1_1" days = -1 }
-			set_country_flag = flag_tt_war_revolution_fortress_1
-		}
-		else_if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_war_revolution_fortress_1 }
-				resource_stockpile_compare = { resource = sr_living_metal value < 3000 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal3
-		}
-		#2
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fortress_1_1
-				resource_stockpile_compare = { resource = sr_living_metal value >=6000 }
-			}
-			add_resource = { sr_living_metal = -6000 }
-			remove_modifier = "mod_tt_war_revolution_fortress_1_1"
-			add_modifier = { modifier = "mod_tt_war_revolution_fortress_1_2" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fortress_1_1
-				resource_stockpile_compare = { resource = sr_living_metal value < 6000 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal3
-		}
-		#3
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fortress_1_2
-				resource_stockpile_compare = { resource = sr_living_metal value >= 9000 }
-			}
-			add_resource = { sr_living_metal = -9000 }
-			remove_modifier = "mod_tt_war_revolution_fortress_1_2"
-			add_modifier = { modifier = "mod_tt_war_revolution_fortress_1_3" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fortress_1_2
-				resource_stockpile_compare = { resource = sr_living_metal value < 9000 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal3
-		}
-		#4
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fortress_1_3
-				resource_stockpile_compare = { resource = sr_living_metal value >= 12000 }
-			}
-			add_resource = { sr_living_metal = -12000 }
-			remove_modifier = "mod_tt_war_revolution_fortress_1_3"
-			add_modifier = { modifier = "mod_tt_war_revolution_fortress_1_4" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fortress_1_3
-				resource_stockpile_compare = { resource = sr_living_metal value < 12000 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal3
-		}
-		#5
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fortress_1_4
-				resource_stockpile_compare = { resource = sr_living_metal value >= 15000 }
-			}
-			add_resource = { sr_living_metal = -15000 }
-			remove_modifier = "mod_tt_war_revolution_fortress_1_4"
-			add_modifier = { modifier = "mod_tt_war_revolution_fortress_1_5" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fortress_1_4
-				resource_stockpile_compare = { resource = sr_living_metal value < 15000 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal3
+		RP_add_revolution_modifier = {
+			RES = sr_living_metal
+			MOD_1 = mod_tt_war_revolution_fortress_1_1
+			MOD_2 = mod_tt_war_revolution_fortress_1_2
+			MOD_3 = mod_tt_war_revolution_fortress_1_3
+			MOD_4 = mod_tt_war_revolution_fortress_1_4
+			MOD_5 = mod_tt_war_revolution_fortress_1_5
+			COST_1 =  3000
+			COST_2 =  6000
+			COST_3 =  9000
+			COST_4 = 12000
+			COST_5 = 15000
 		}
 	}
 }
@@ -1879,90 +439,18 @@ button_tt_war_revolution_fortress_2 = {
 		has_modifier = mod_tt_war_revolution_fortress_5
 	}
 	effect = {
-		#1
-		if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_war_revolution_fortress_2 }
-				resource_stockpile_compare = { resource = sr_living_metal value >= 3000 }
-			}
-			add_resource = { sr_living_metal = -3000 }
-			add_modifier = { modifier = "mod_tt_war_revolution_fortress_2_1" days = -1 }
-			set_country_flag = flag_tt_war_revolution_fortress_2
-		}
-		else_if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_war_revolution_fortress_2 }
-				resource_stockpile_compare = { resource = sr_living_metal value < 3000 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal3
-		}
-		#2
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fortress_2_1
-				resource_stockpile_compare = { resource = sr_living_metal value >= 6000 }
-			}
-			add_resource = { sr_living_metal = -6000 }
-			remove_modifier = "mod_tt_war_revolution_fortress_2_1"
-			add_modifier = { modifier = "mod_tt_war_revolution_fortress_2_2" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fortress_2_1
-				resource_stockpile_compare = { resource = sr_living_metal value < 6000 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal3
-		}
-		#3
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fortress_2_2
-				resource_stockpile_compare = { resource = sr_living_metal value >= 9000 }
-			}
-			add_resource = { sr_living_metal = -9000 }
-			remove_modifier = "mod_tt_war_revolution_fortress_2_2"
-			add_modifier = { modifier = "mod_tt_war_revolution_fortress_2_3" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fortress_2_2
-				resource_stockpile_compare = { resource = sr_living_metal value < 9000 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal3
-		}
-		#4
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fortress_2_3
-				resource_stockpile_compare = { resource = sr_living_metal value >= 12000 }
-			}
-			add_resource = { sr_living_metal = -12000 }
-			remove_modifier = "mod_tt_war_revolution_fortress_2_3"
-			add_modifier = { modifier = "mod_tt_war_revolution_fortress_2_4" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fortress_2_3
-				resource_stockpile_compare = { resource = sr_living_metal value < 12000 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal3
-		}
-		#5
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fortress_2_4
-				resource_stockpile_compare = { resource = sr_living_metal value >= 15000 }
-			}
-			add_resource = { sr_living_metal = -15000 }
-			remove_modifier = "mod_tt_war_revolution_fortress_2_4"
-			add_modifier = { modifier = "mod_tt_war_revolution_fortress_2_5" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fortress_2_4
-				resource_stockpile_compare = { resource = sr_living_metal value < 15000 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal3
+		RP_add_revolution_modifier = {
+			RES = sr_living_metal
+			MOD_1 = mod_tt_war_revolution_fortress_2_1
+			MOD_2 = mod_tt_war_revolution_fortress_2_2
+			MOD_3 = mod_tt_war_revolution_fortress_2_3
+			MOD_4 = mod_tt_war_revolution_fortress_2_4
+			MOD_5 = mod_tt_war_revolution_fortress_2_5
+			COST_1 =  3000
+			COST_2 =  6000
+			COST_3 =  9000
+			COST_4 = 12000
+			COST_5 = 15000
 		}
 	}
 }
@@ -1972,90 +460,18 @@ button_tt_war_revolution_fortress_3 = {
 		has_modifier = mod_tt_war_revolution_fortress_5
 	}
 	effect = {
-		#1
-		if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_war_revolution_fortress_3 }
-				resource_stockpile_compare = { resource = sr_living_metal value >= 3000 }
-			}
-			add_resource = { sr_living_metal = -3000 }
-			add_modifier = { modifier = "mod_tt_war_revolution_fortress_3_1" days = -1 }
-			set_country_flag = flag_tt_war_revolution_fortress_3
-		}
-		else_if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_war_revolution_fortress_3 }
-				resource_stockpile_compare = { resource = sr_living_metal value < 3000 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal3
-		}
-		#2
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fortress_3_1
-				resource_stockpile_compare = { resource = sr_living_metal value >= 6000 }
-			}
-			add_resource = { sr_living_metal = -6000 }
-			remove_modifier = "mod_tt_war_revolution_fortress_3_1"
-			add_modifier = { modifier = "mod_tt_war_revolution_fortress_3_2" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fortress_3_1
-				resource_stockpile_compare = { resource = sr_living_metal value < 6000 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal3
-		}
-		#3
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fortress_3_2
-				resource_stockpile_compare = { resource = sr_living_metal value >= 9000 }
-			}
-			add_resource = { sr_living_metal = -9000 }
-			remove_modifier = "mod_tt_war_revolution_fortress_3_2"
-			add_modifier = { modifier = "mod_tt_war_revolution_fortress_3_3" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fortress_3_2
-				resource_stockpile_compare = { resource = sr_living_metal value < 9000 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal3
-		}
-		#4
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fortress_3_3
-				resource_stockpile_compare = { resource = sr_living_metal value >= 12000 }
-			}
-			add_resource = { sr_living_metal = -12000 }
-			remove_modifier = "mod_tt_war_revolution_fortress_3_3"
-			add_modifier = { modifier = "mod_tt_war_revolution_fortress_3_4" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fortress_3_3
-				resource_stockpile_compare = { resource = sr_living_metal value < 12000 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal3
-		}
-		#5
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fortress_3_4
-				resource_stockpile_compare = { resource = sr_living_metal value >= 15000 }
-			}
-			add_resource = { sr_living_metal = -15000 }
-			remove_modifier = "mod_tt_war_revolution_fortress_3_4"
-			add_modifier = { modifier = "mod_tt_war_revolution_fortress_3_5" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_fortress_3_4
-				resource_stockpile_compare = { resource = sr_living_metal value < 15000 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal3
+		RP_add_revolution_modifier = {
+			RES = sr_living_metal
+			MOD_1 = mod_tt_war_revolution_fortress_3_1
+			MOD_2 = mod_tt_war_revolution_fortress_3_2
+			MOD_3 = mod_tt_war_revolution_fortress_3_3
+			MOD_4 = mod_tt_war_revolution_fortress_3_4
+			MOD_5 = mod_tt_war_revolution_fortress_3_5
+			COST_1 =  3000
+			COST_2 =  6000
+			COST_3 =  9000
+			COST_4 = 12000
+			COST_5 = 15000
 		}
 	}
 }
@@ -2065,90 +481,18 @@ button_tt_war_revolution_battle = {
 		has_modifier = mod_tt_war_revolution_5
 	}
 	effect = {
-		#1
-		if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_war_revolution_battle }
-				resource_stockpile_compare = { resource = sr_living_metal value >= 1500 }
-			}
-			add_resource = { sr_living_metal = -1500 }
-			add_modifier = { modifier = "mod_tt_war_revolution_battle_1" days = -1 }
-			set_country_flag = flag_tt_war_revolution_battle
-		}
-		else_if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_war_revolution_battle }
-				resource_stockpile_compare = { resource = sr_living_metal value < 1500 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal2
-		}
-		#2
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_battle_1
-				resource_stockpile_compare = { resource = sr_living_metal value >= 3000 }
-			}
-			add_resource = { sr_living_metal = -3000 }
-			remove_modifier = "mod_tt_war_revolution_battle_1"
-			add_modifier = { modifier = "mod_tt_war_revolution_battle_2" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_battle_1
-				resource_stockpile_compare = { resource = sr_living_metal value < 3000 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal2
-		}
-		#3
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_battle_2
-				resource_stockpile_compare = { resource = sr_living_metal value >= 4500 }
-			}
-			add_resource = { sr_living_metal = -4500 }
-			remove_modifier = "mod_tt_war_revolution_battle_2"
-			add_modifier = { modifier = "mod_tt_war_revolution_battle_3" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_battle_2
-				resource_stockpile_compare = { resource = sr_living_metal value < 4500 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal2
-		}
-		#4
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_battle_3
-				resource_stockpile_compare = { resource = sr_living_metal value >= 6000 }
-			}
-			add_resource = { sr_living_metal = -6000 }
-			remove_modifier = "mod_tt_war_revolution_battle_3"
-			add_modifier = { modifier = "mod_tt_war_revolution_battle_4" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_battle_3
-				resource_stockpile_compare = { resource = sr_living_metal value < 6000 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal2
-		}
-		#5
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_battle_4
-				resource_stockpile_compare = { resource = sr_living_metal value >= 7500 }
-			}
-			add_resource = { sr_living_metal = -7500 }
-			remove_modifier = "mod_tt_war_revolution_battle_4"
-			add_modifier = { modifier = "mod_tt_war_revolution_battle_5" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_battle_4
-				resource_stockpile_compare = { resource = sr_living_metal value < 7500 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal2
+		RP_add_revolution_modifier = {
+			RES = sr_living_metal
+			MOD_1 = mod_tt_war_revolution_battle_1
+			MOD_2 = mod_tt_war_revolution_battle_2
+			MOD_3 = mod_tt_war_revolution_battle_3
+			MOD_4 = mod_tt_war_revolution_battle_4
+			MOD_5 = mod_tt_war_revolution_battle_5
+			COST_1 = 1500
+			COST_2 = 3000
+			COST_3 = 4500
+			COST_4 = 6000
+			COST_5 = 7500
 		}
 	}
 }
@@ -2158,90 +502,18 @@ button_tt_war_revolution_battle_1 = {
 		has_modifier = mod_tt_war_revolution_battle_5
 	}
 	effect = {
-		#1
-		if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_war_revolution_battle_1 }
-				resource_stockpile_compare = { resource = sr_living_metal value >= 3000 }
-			}
-			add_resource = { sr_living_metal = -3000 }
-			add_modifier = { modifier = "mod_tt_war_revolution_battle_1_1" days = -1 }
-			set_country_flag = flag_tt_war_revolution_battle_1
-		}
-		else_if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_war_revolution_battle_1 }
-				resource_stockpile_compare = { resource = sr_living_metal value < 3000 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal3
-		}
-		#2
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_battle_1_1
-				resource_stockpile_compare = { resource = sr_living_metal value >= 6000 }
-			}
-			add_resource = { sr_living_metal = -6000 }
-			remove_modifier = "mod_tt_war_revolution_battle_1_1"
-			add_modifier = { modifier = "mod_tt_war_revolution_battle_1_2" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_battle_1_1
-				resource_stockpile_compare = { resource = sr_living_metal value < 6000 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal3
-		}
-		#3
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_battle_1_2
-				resource_stockpile_compare = { resource = sr_living_metal value >= 9000 }
-			}
-			add_resource = { sr_living_metal = -9000 }
-			remove_modifier = "mod_tt_war_revolution_battle_1_2"
-			add_modifier = { modifier = "mod_tt_war_revolution_battle_1_3" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_battle_1_2
-				resource_stockpile_compare = { resource = sr_living_metal value < 9000 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal3
-		}
-		#4
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_battle_1_3
-				resource_stockpile_compare = { resource = sr_living_metal value >= 12000 }
-			}
-			add_resource = { sr_living_metal = -12000 }
-			remove_modifier = "mod_tt_war_revolution_battle_1_3"
-			add_modifier = { modifier = "mod_tt_war_revolution_battle_1_4" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_battle_1_3
-				resource_stockpile_compare = { resource = sr_living_metal value < 12000 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal3
-		}
-		#5
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_battle_1_4
-				resource_stockpile_compare = { resource = sr_living_metal value >= 15000 }
-			}
-			add_resource = { sr_living_metal = -15000 }
-			remove_modifier = "mod_tt_war_revolution_battle_1_4"
-			add_modifier = { modifier = "mod_tt_war_revolution_battle_1_5" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_battle_1_4
-				resource_stockpile_compare = { resource = sr_living_metal value < 15000 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal3
+		RP_add_revolution_modifier = {
+			RES = sr_living_metal
+			MOD_1 = mod_tt_war_revolution_battle_1_1
+			MOD_2 = mod_tt_war_revolution_battle_1_2
+			MOD_3 = mod_tt_war_revolution_battle_1_3
+			MOD_4 = mod_tt_war_revolution_battle_1_4
+			MOD_5 = mod_tt_war_revolution_battle_1_5
+			COST_1 =  3000
+			COST_2 =  6000
+			COST_3 =  9000
+			COST_4 = 12000
+			COST_5 = 15000
 		}
 	}
 }
@@ -2251,90 +523,18 @@ button_tt_war_revolution_battle_2 = {
 		has_modifier = mod_tt_war_revolution_battle_5
 	}
 	effect = {
-		#1
-		if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_war_revolution_battle_2 }
-				resource_stockpile_compare = { resource = sr_living_metal value >= 3000 }
-			}
-			add_resource = { sr_living_metal = -3000 }
-			add_modifier = { modifier = "mod_tt_war_revolution_battle_2_1" days = -1 }
-			set_country_flag = flag_tt_war_revolution_battle_2
-		}
-		else_if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_war_revolution_battle_2 }
-				resource_stockpile_compare = { resource = sr_living_metal value < 3000 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal3
-		}
-		#2
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_battle_2_1
-				resource_stockpile_compare = { resource = sr_living_metal value >= 6000 }
-			}
-			add_resource = { sr_living_metal = -6000 }
-			remove_modifier = "mod_tt_war_revolution_battle_2_1"
-			add_modifier = { modifier = "mod_tt_war_revolution_battle_2_2" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_battle_2_1
-				resource_stockpile_compare = { resource = sr_living_metal value < 6000 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal3
-		}
-		#3
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_battle_2_2
-				resource_stockpile_compare = { resource = sr_living_metal value >= 9000 }
-			}
-			add_resource = { sr_living_metal = -9000 }
-			remove_modifier = "mod_tt_war_revolution_battle_2_2"
-			add_modifier = { modifier = "mod_tt_war_revolution_battle_2_3" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_battle_2_2
-				resource_stockpile_compare = { resource = sr_living_metal value < 9000 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal3
-		}
-		#4
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_battle_2_3
-				resource_stockpile_compare = { resource = sr_living_metal value >= 12000 }
-			}
-			add_resource = { sr_living_metal = -12000 }
-			remove_modifier = "mod_tt_war_revolution_battle_2_3"
-			add_modifier = { modifier = "mod_tt_war_revolution_battle_2_4" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_battle_2_3
-				resource_stockpile_compare = { resource = sr_living_metal value < 12000 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal3
-		}
-		#5
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_battle_2_4
-				resource_stockpile_compare = { resource = sr_living_metal value >= 15000 }
-			}
-			add_resource = { sr_living_metal = -15000 }
-			remove_modifier = "mod_tt_war_revolution_battle_2_4"
-			add_modifier = { modifier = "mod_tt_war_revolution_battle_2_5" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_battle_2_4
-				resource_stockpile_compare = { resource = sr_living_metal value < 15000 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal3
+		RP_add_revolution_modifier = {
+			RES = sr_living_metal
+			MOD_1 = mod_tt_war_revolution_battle_2_1
+			MOD_2 = mod_tt_war_revolution_battle_2_2
+			MOD_3 = mod_tt_war_revolution_battle_2_3
+			MOD_4 = mod_tt_war_revolution_battle_2_4
+			MOD_5 = mod_tt_war_revolution_battle_2_5
+			COST_1 =  3000
+			COST_2 =  6000
+			COST_3 =  9000
+			COST_4 = 12000
+			COST_5 = 15000
 		}
 	}
 }
@@ -2344,90 +544,18 @@ button_tt_war_revolution_battle_3 = {
 		has_modifier = mod_tt_war_revolution_battle_5
 	}
 	effect = {
-		#1
-		if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_war_revolution_battle_3 }
-				resource_stockpile_compare = { resource = sr_living_metal value >= 3000 }
-			}
-			add_resource = { sr_living_metal = -3000 }
-			add_modifier = { modifier = "mod_tt_war_revolution_battle_3_1" days = -1 }
-			set_country_flag = flag_tt_war_revolution_battle_3
-		}
-		else_if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_war_revolution_battle_3 }
-				resource_stockpile_compare = { resource = sr_living_metal value < 3000 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal3
-		}
-		#2
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_battle_3_1
-				resource_stockpile_compare = { resource = sr_living_metal value >= 6000 }
-			}
-			add_resource = { sr_living_metal = -6000 }
-			remove_modifier = "mod_tt_war_revolution_battle_3_1"
-			add_modifier = { modifier = "mod_tt_war_revolution_battle_3_2" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_battle_3_1
-				resource_stockpile_compare = { resource = sr_living_metal value < 6000 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal3
-		}
-		#3
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_battle_3_2
-				resource_stockpile_compare = { resource = sr_living_metal value >= 9000 }
-			}
-			add_resource = { sr_living_metal = -9000 }
-			remove_modifier = "mod_tt_war_revolution_battle_3_2"
-			add_modifier = { modifier = "mod_tt_war_revolution_battle_3_3" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_battle_3_2
-				resource_stockpile_compare = { resource = sr_living_metal value < 9000 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal3
-		}
-		#4
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_battle_3_3
-				resource_stockpile_compare = { resource = sr_living_metal value >= 12000 }
-			}
-			add_resource = { sr_living_metal = -12000 }
-			remove_modifier = "mod_tt_war_revolution_battle_3_3"
-			add_modifier = { modifier = "mod_tt_war_revolution_battle_3_4" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_battle_3_3
-				resource_stockpile_compare = { resource = sr_living_metal value < 12000 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal3
-		}
-		#5
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_battle_3_4
-				resource_stockpile_compare = { resource = sr_living_metal value >= 15000 }
-			}
-			add_resource = { sr_living_metal = -15000 }
-			remove_modifier = "mod_tt_war_revolution_battle_3_4"
-			add_modifier = { modifier = "mod_tt_war_revolution_battle_3_5" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_war_revolution_battle_3_4
-				resource_stockpile_compare = { resource = sr_living_metal value < 15000 }
-			}
-			custom_tooltip = stop_revolution_sr_living_metal3
+		RP_add_revolution_modifier = {
+			RES = sr_living_metal
+			MOD_1 = mod_tt_war_revolution_battle_3_1
+			MOD_2 = mod_tt_war_revolution_battle_3_2
+			MOD_3 = mod_tt_war_revolution_battle_3_3
+			MOD_4 = mod_tt_war_revolution_battle_3_4
+			MOD_5 = mod_tt_war_revolution_battle_3_5
+			COST_1 =  3000
+			COST_2 =  6000
+			COST_3 =  9000
+			COST_4 = 12000
+			COST_5 = 15000
 		}
 	}
 }
@@ -2437,90 +565,18 @@ button_tt_science_revolution = {
 		has_ascension_perk = ap_tt_reform_plane_2
 	}
 	effect = {
-		#1
-		if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_science_revolution }
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 1000 }
-			}
-			add_resource = { sr_dark_matter = -1000 }
-			add_modifier = { modifier = "mod_tt_science_revolution_1" days = -1 }
-			set_country_flag = flag_tt_science_revolution
-		}
-		else_if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_science_revolution }
-				resource_stockpile_compare = { resource = sr_dark_matter value < 1000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter1
-		}
-		#2
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_1
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 2000 }
-			}
-			add_resource = { sr_dark_matter = -2000 }
-			remove_modifier = "mod_tt_science_revolution_1"
-			add_modifier = { modifier = "mod_tt_science_revolution_2" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_1
-				resource_stockpile_compare = { resource = sr_dark_matter value < 2000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter1
-		}
-		#3
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_2
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 3000 }
-			}
-			add_resource = { sr_dark_matter = -3000 }
-			remove_modifier = "mod_tt_science_revolution_2"
-			add_modifier = { modifier = "mod_tt_science_revolution_3" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_2
-				resource_stockpile_compare = { resource = sr_dark_matter value < 3000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter1
-		}
-		#4
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_3
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 4000 }
-			}
-			add_resource = { sr_dark_matter = -4000 }
-			remove_modifier = "mod_tt_science_revolution_3"
-			add_modifier = { modifier = "mod_tt_science_revolution_4" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_3
-				resource_stockpile_compare = { resource = sr_dark_matter value < 4000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter1
-		}
-		#5
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_4
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 5000 }
-			}
-			add_resource = { sr_dark_matter = -5000 }
-			remove_modifier = "mod_tt_science_revolution_4"
-			add_modifier = { modifier = "mod_tt_science_revolution_5" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_4
-				resource_stockpile_compare = { resource = sr_dark_matter value < 5000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter1
+		RP_add_revolution_modifier = {
+			RES = sr_dark_matter
+			MOD_1 = mod_tt_science_revolution_1
+			MOD_2 = mod_tt_science_revolution_2
+			MOD_3 = mod_tt_science_revolution_3
+			MOD_4 = mod_tt_science_revolution_4
+			MOD_5 = mod_tt_science_revolution_5
+			COST_1 = 1000
+			COST_2 = 2000
+			COST_3 = 3000
+			COST_4 = 4000
+			COST_5 = 5000
 		}
 	}
 }
@@ -2530,90 +586,18 @@ button_tt_science_revolution_fanaticism = {
 		has_modifier = mod_tt_science_revolution_5
 	}
 	effect = {
-		#1
-		if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_science_revolution_fanaticism }
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 2000 }
-			}
-			add_resource = { sr_dark_matter = -2000 }
-			add_modifier = { modifier = "mod_tt_science_revolution_fanaticism_1" days = -1 }
-			set_country_flag = flag_tt_science_revolution_fanaticism
-		}
-		else_if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_science_revolution_fanaticism }
-				resource_stockpile_compare = { resource = sr_dark_matter value < 2000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter2
-		}
-		#2
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_fanaticism_1
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 4000 }
-			}
-			add_resource = { sr_dark_matter = -4000 }
-			remove_modifier = "mod_tt_science_revolution_fanaticism_1"
-			add_modifier = { modifier = "mod_tt_science_revolution_fanaticism_2" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_fanaticism_1
-				resource_stockpile_compare = { resource = sr_dark_matter value < 4000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter2
-		}
-		#3
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_fanaticism_2
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 6000 }
-			}
-			add_resource = { sr_dark_matter = -6000 }
-			remove_modifier = "mod_tt_science_revolution_fanaticism_2"
-			add_modifier = { modifier = "mod_tt_science_revolution_fanaticism_3" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_fanaticism_2
-				resource_stockpile_compare = { resource = sr_dark_matter value < 6000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter2
-		}
-		#4
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_fanaticism_3
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 8000 }
-			}
-			add_resource = { sr_dark_matter = -8000 }
-			remove_modifier = "mod_tt_science_revolution_fanaticism_3"
-			add_modifier = { modifier = "mod_tt_science_revolution_fanaticism_4" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_fanaticism_3
-				resource_stockpile_compare = { resource = sr_dark_matter value < 8000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter2
-		}
-		#5
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_fanaticism_4
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 10000 }
-			}
-			add_resource = { sr_dark_matter = -10000 }
-			remove_modifier = "mod_tt_science_revolution_fanaticism_4"
-			add_modifier = { modifier = "mod_tt_science_revolution_fanaticism_5" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_fanaticism_4
-				resource_stockpile_compare = { resource = sr_dark_matter value < 10000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter2
+		RP_add_revolution_modifier = {
+			RES = sr_dark_matter
+			MOD_1 = mod_tt_science_revolution_fanaticism_1
+			MOD_2 = mod_tt_science_revolution_fanaticism_2
+			MOD_3 = mod_tt_science_revolution_fanaticism_3
+			MOD_4 = mod_tt_science_revolution_fanaticism_4
+			MOD_5 = mod_tt_science_revolution_fanaticism_5
+			COST_1 =  2000
+			COST_2 =  4000
+			COST_3 =  6000
+			COST_4 =  8000
+			COST_5 = 10000
 		}
 	}
 }
@@ -2623,90 +607,18 @@ button_tt_science_revolution_fanaticism_1 = {
 		has_modifier = mod_tt_science_revolution_fanaticism_5
 	}
 	effect = {
-		#1
-		if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_science_revolution_fanaticism_1 }
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 4000 }
-			}
-			add_resource = { sr_dark_matter = -4000 }
-			add_modifier = { modifier = "mod_tt_science_revolution_fanaticism_1_1" days = -1 }
-			set_country_flag = flag_tt_science_revolution_fanaticism_1
-		}
-		else_if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_science_revolution_fanaticism_1 }
-				resource_stockpile_compare = { resource = sr_dark_matter value < 4000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter3
-		}
-		#2
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_fanaticism_1_1
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 8000 }
-			}
-			add_resource = { sr_dark_matter = -8000 }
-			remove_modifier = "mod_tt_science_revolution_fanaticism_1_1"
-			add_modifier = { modifier = "mod_tt_science_revolution_fanaticism_1_2" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_fanaticism_1_1
-				resource_stockpile_compare = { resource = sr_dark_matter value < 8000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter3
-		}
-		#3
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_fanaticism_1_2
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 12000 }
-			}
-			add_resource = { sr_dark_matter = -12000 }
-			remove_modifier = "mod_tt_science_revolution_fanaticism_1_2"
-			add_modifier = { modifier = "mod_tt_science_revolution_fanaticism_1_3" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_fanaticism_1_2
-				resource_stockpile_compare = { resource = sr_dark_matter value < 12000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter3
-		}
-		#4
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_fanaticism_1_3
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 16000 }
-			}
-			add_resource = { sr_dark_matter = -16000 }
-			remove_modifier = "mod_tt_science_revolution_fanaticism_1_3"
-			add_modifier = { modifier = "mod_tt_science_revolution_fanaticism_1_4" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_fanaticism_1_3
-				resource_stockpile_compare = { resource = sr_dark_matter value < 16000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter3
-		}
-		#5
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_fanaticism_1_4
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 20000 }
-			}
-			add_resource = { sr_dark_matter = -20000 }
-			remove_modifier = "mod_tt_science_revolution_fanaticism_1_4"
-			add_modifier = { modifier = "mod_tt_science_revolution_fanaticism_1_5" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_fanaticism_1_4
-				resource_stockpile_compare = { resource = sr_dark_matter value < 20000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter3
+		RP_add_revolution_modifier = {
+			RES = sr_dark_matter
+			MOD_1 = mod_tt_science_revolution_fanaticism_1_1
+			MOD_2 = mod_tt_science_revolution_fanaticism_1_2
+			MOD_3 = mod_tt_science_revolution_fanaticism_1_3
+			MOD_4 = mod_tt_science_revolution_fanaticism_1_4
+			MOD_5 = mod_tt_science_revolution_fanaticism_1_5
+			COST_1 =  4000
+			COST_2 =  8000
+			COST_3 = 12000
+			COST_4 = 16000
+			COST_5 = 20000
 		}
 	}
 }
@@ -2716,90 +628,18 @@ button_tt_science_revolution_fanaticism_2 = {
 		has_modifier = mod_tt_science_revolution_fanaticism_5
 	}
 	effect = {
-		#1
-		if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_science_revolution_fanaticism_2 }
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 4000 }
-			}
-			add_resource = { sr_dark_matter = -4000 }
-			add_modifier = { modifier = "mod_tt_science_revolution_fanaticism_2_1" days = -1 }
-			set_country_flag = flag_tt_science_revolution_fanaticism_2
-		}
-		else_if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_science_revolution_fanaticism_2 }
-				resource_stockpile_compare = { resource = sr_dark_matter value < 4000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter3
-		}
-		#2
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_fanaticism_2_1
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 8000 }
-			}
-			add_resource = { sr_dark_matter = -8000 }
-			remove_modifier = "mod_tt_science_revolution_fanaticism_2_1"
-			add_modifier = { modifier = "mod_tt_science_revolution_fanaticism_2_2" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_fanaticism_2_1
-				resource_stockpile_compare = { resource = sr_dark_matter value < 8000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter3
-		}
-		#3
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_fanaticism_2_2
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 12000 }
-			}
-			add_resource = { sr_dark_matter = -12000 }
-			remove_modifier = "mod_tt_science_revolution_fanaticism_2_2"
-			add_modifier = { modifier = "mod_tt_science_revolution_fanaticism_2_3" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_fanaticism_2_2
-				resource_stockpile_compare = { resource = sr_dark_matter value < 12000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter3
-		}
-		#4
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_fanaticism_2_3
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 16000 }
-			}
-			add_resource = { sr_dark_matter = -16000 }
-			remove_modifier = "mod_tt_science_revolution_fanaticism_2_3"
-			add_modifier = { modifier = "mod_tt_science_revolution_fanaticism_2_4" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_fanaticism_2_3
-				resource_stockpile_compare = { resource = sr_dark_matter value < 16000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter3
-		}
-		#5
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_fanaticism_2_4
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 20000 }
-			}
-			add_resource = { sr_dark_matter = -20000 }
-			remove_modifier = "mod_tt_science_revolution_fanaticism_2_4"
-			add_modifier = { modifier = "mod_tt_science_revolution_fanaticism_2_5" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_fanaticism_2_4
-				resource_stockpile_compare = { resource = sr_dark_matter value < 20000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter3
+		RP_add_revolution_modifier = {
+			RES = sr_dark_matter
+			MOD_1 = mod_tt_science_revolution_fanaticism_2_1
+			MOD_2 = mod_tt_science_revolution_fanaticism_2_2
+			MOD_3 = mod_tt_science_revolution_fanaticism_2_3
+			MOD_4 = mod_tt_science_revolution_fanaticism_2_4
+			MOD_5 = mod_tt_science_revolution_fanaticism_2_5
+			COST_1 =  4000
+			COST_2 =  8000
+			COST_3 = 12000
+			COST_4 = 16000
+			COST_5 = 20000
 		}
 	}
 }
@@ -2809,90 +649,18 @@ button_tt_science_revolution_fanaticism_3 = {
 		has_modifier = mod_tt_science_revolution_fanaticism_5
 	}
 	effect = {
-		#1
-		if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_science_revolution_fanaticism_3 }
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 4000 }
-			}
-			add_resource = { sr_dark_matter = -4000 }
-			add_modifier = { modifier = "mod_tt_science_revolution_fanaticism_3_1" days = -1 }
-			set_country_flag = flag_tt_science_revolution_fanaticism_3
-		}
-		else_if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_science_revolution_fanaticism_3 }
-				resource_stockpile_compare = { resource = sr_dark_matter value < 4000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter3
-		}
-		#2
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_fanaticism_3_1
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 8000 }
-			}
-			add_resource = { sr_dark_matter = -8000 }
-			remove_modifier = "mod_tt_science_revolution_fanaticism_3_1"
-			add_modifier = { modifier = "mod_tt_science_revolution_fanaticism_3_2" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_fanaticism_3_1
-				resource_stockpile_compare = { resource = sr_dark_matter value < 8000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter3
-		}
-		#3
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_fanaticism_3_2
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 12000 }
-			}
-			add_resource = { sr_dark_matter = -12000 }
-			remove_modifier = "mod_tt_science_revolution_fanaticism_3_2"
-			add_modifier = { modifier = "mod_tt_science_revolution_fanaticism_3_3" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_fanaticism_3_2
-				resource_stockpile_compare = { resource = sr_dark_matter value < 12000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter3
-		}
-		#4
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_fanaticism_3_3
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 16000 }
-			}
-			add_resource = { sr_dark_matter = -16000 }
-			remove_modifier = "mod_tt_science_revolution_fanaticism_3_3"
-			add_modifier = { modifier = "mod_tt_science_revolution_fanaticism_3_4" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_fanaticism_3_3
-				resource_stockpile_compare = { resource = sr_dark_matter value < 16000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter3
-		}
-		#5
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_fanaticism_3_4
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 20000 }
-			}
-			add_resource = { sr_dark_matter = -20000 }
-			remove_modifier = "mod_tt_science_revolution_fanaticism_3_4"
-			add_modifier = { modifier = "mod_tt_science_revolution_fanaticism_3_5" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_fanaticism_3_4
-				resource_stockpile_compare = { resource = sr_dark_matter value < 20000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter3
+		RP_add_revolution_modifier = {
+			RES = sr_dark_matter
+			MOD_1 = mod_tt_science_revolution_fanaticism_3_1
+			MOD_2 = mod_tt_science_revolution_fanaticism_3_2
+			MOD_3 = mod_tt_science_revolution_fanaticism_3_3
+			MOD_4 = mod_tt_science_revolution_fanaticism_3_4
+			MOD_5 = mod_tt_science_revolution_fanaticism_3_5
+			COST_1 =  4000
+			COST_2 =  8000
+			COST_3 = 12000
+			COST_4 = 16000
+			COST_5 = 20000
 		}
 	}
 }
@@ -2902,90 +670,18 @@ button_tt_science_revolution_job = {
 		has_modifier = mod_tt_science_revolution_5
 	}
 	effect = {
-		#1
-		if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_science_revolution_job }
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 2000 }
-			}
-			add_resource = { sr_dark_matter = -2000 }
-			add_modifier = { modifier = "mod_tt_science_revolution_job_1" days = -1 }
-			set_country_flag = flag_tt_science_revolution_job
-		}
-		else_if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_science_revolution_job }
-				resource_stockpile_compare = { resource = sr_dark_matter value < 2000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter2
-		}
-		#2
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_job_1
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 4000 }
-			}
-			add_resource = { sr_dark_matter = -4000 }
-			remove_modifier = "mod_tt_science_revolution_job_1"
-			add_modifier = { modifier = "mod_tt_science_revolution_job_2" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_job_1
-				resource_stockpile_compare = { resource = sr_dark_matter value < 4000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter2
-		}
-		#3
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_job_2
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 6000 }
-			}
-			add_resource = { sr_dark_matter = -6000 }
-			remove_modifier = "mod_tt_science_revolution_job_2"
-			add_modifier = { modifier = "mod_tt_science_revolution_job_3" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_job_2
-				resource_stockpile_compare = { resource = sr_dark_matter value < 6000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter2
-		}
-		#4
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_job_3
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 8000 }
-			}
-			add_resource = { sr_dark_matter = -8000 }
-			remove_modifier = "mod_tt_science_revolution_job_3"
-			add_modifier = { modifier = "mod_tt_science_revolution_job_4" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_job_3
-				resource_stockpile_compare = { resource = sr_dark_matter value < 8000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter2
-		}
-		#5
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_job_4
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 10000 }
-			}
-			add_resource = { sr_dark_matter = -10000 }
-			remove_modifier = "mod_tt_science_revolution_job_4"
-			add_modifier = { modifier = "mod_tt_science_revolution_job_5" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_job_4
-				resource_stockpile_compare = { resource = sr_dark_matter value < 10000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter2
+		RP_add_revolution_modifier = {
+			RES = sr_dark_matter
+			MOD_1 = mod_tt_science_revolution_job_1
+			MOD_2 = mod_tt_science_revolution_job_2
+			MOD_3 = mod_tt_science_revolution_job_3
+			MOD_4 = mod_tt_science_revolution_job_4
+			MOD_5 = mod_tt_science_revolution_job_5
+			COST_1 =  2000
+			COST_2 =  4000
+			COST_3 =  6000
+			COST_4 =  8000
+			COST_5 = 10000
 		}
 	}
 }
@@ -2995,90 +691,18 @@ button_tt_science_revolution_job_1 = {
 		has_modifier = mod_tt_science_revolution_job_5
 	}
 	effect = {
-		#1
-		if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_science_revolution_job_1 }
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 4000 }
-			}
-			add_resource = { sr_dark_matter = -4000 }
-			add_modifier = { modifier = "mod_tt_science_revolution_job_1_1" days = -1 }
-			set_country_flag = flag_tt_science_revolution_job_1
-		}
-		else_if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_science_revolution_job_1 }
-				resource_stockpile_compare = { resource = sr_dark_matter value < 4000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter3
-		}
-		#2
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_job_1_1
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 8000 }
-			}
-			add_resource = { sr_dark_matter = -8000 }
-			remove_modifier = "mod_tt_science_revolution_job_1_1"
-			add_modifier = { modifier = "mod_tt_science_revolution_job_1_2" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_job_1_1
-				resource_stockpile_compare = { resource = sr_dark_matter value < 8000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter3
-		}
-		#3
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_job_1_2
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 12000 }
-			}
-			add_resource = { sr_dark_matter = -12000 }
-			remove_modifier = "mod_tt_science_revolution_job_1_2"
-			add_modifier = { modifier = "mod_tt_science_revolution_job_1_3" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_job_1_2
-				resource_stockpile_compare = { resource = sr_dark_matter value < 12000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter3
-		}
-		#4
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_job_1_3
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 16000 }
-			}
-			add_resource = { sr_dark_matter = -16000 }
-			remove_modifier = "mod_tt_science_revolution_job_1_3"
-			add_modifier = { modifier = "mod_tt_science_revolution_job_1_4" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_job_1_3
-				resource_stockpile_compare = { resource = sr_dark_matter value < 16000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter3
-		}
-		#5
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_job_1_4
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 20000 }
-			}
-			add_resource = { sr_dark_matter = -20000 }
-			remove_modifier = "mod_tt_science_revolution_job_1_4"
-			add_modifier = { modifier = "mod_tt_science_revolution_job_1_5" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_job_1_4
-				resource_stockpile_compare = { resource = sr_dark_matter value < 20000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter3
+		RP_add_revolution_modifier = {
+			RES = sr_dark_matter
+			MOD_1 = mod_tt_science_revolution_job_1_1
+			MOD_2 = mod_tt_science_revolution_job_1_2
+			MOD_3 = mod_tt_science_revolution_job_1_3
+			MOD_4 = mod_tt_science_revolution_job_1_4
+			MOD_5 = mod_tt_science_revolution_job_1_5
+			COST_1 =  4000
+			COST_2 =  8000
+			COST_3 = 12000
+			COST_4 = 16000
+			COST_5 = 20000
 		}
 	}
 }
@@ -3088,90 +712,18 @@ button_tt_science_revolution_job_2 = {
 		has_modifier = mod_tt_science_revolution_job_5
 	}
 	effect = {
-		#1
-		if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_science_revolution_job_2 }
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 4000 }
-			}
-			add_resource = { sr_dark_matter = -4000 }
-			add_modifier = { modifier = "mod_tt_science_revolution_job_2_1" days = -1 }
-			set_country_flag = flag_tt_science_revolution_job_2
-		}
-		else_if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_science_revolution_job_2 }
-				resource_stockpile_compare = { resource = sr_dark_matter value < 4000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter3
-		}
-		#2
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_job_2_1
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 8000 }
-			}
-			add_resource = { sr_dark_matter = -8000 }
-			remove_modifier = "mod_tt_science_revolution_job_2_1"
-			add_modifier = { modifier = "mod_tt_science_revolution_job_2_2" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_job_2_1
-				resource_stockpile_compare = { resource = sr_dark_matter value < 8000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter3
-		}
-		#3
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_job_2_2
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 12000 }
-			}
-			add_resource = { sr_dark_matter = -12000 }
-			remove_modifier = "mod_tt_science_revolution_job_2_2"
-			add_modifier = { modifier = "mod_tt_science_revolution_job_2_3" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_job_2_2
-				resource_stockpile_compare = { resource = sr_dark_matter value < 12000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter3
-		}
-		#4
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_job_2_3
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 16000 }
-			}
-			add_resource = { sr_dark_matter = -16000 }
-			remove_modifier = "mod_tt_science_revolution_job_2_3"
-			add_modifier = { modifier = "mod_tt_science_revolution_job_2_4" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_job_2_3
-				resource_stockpile_compare = { resource = sr_dark_matter value < 16000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter3
-		}
-		#5
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_job_2_4
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 20000 }
-			}
-			add_resource = { sr_dark_matter = -20000 }
-			remove_modifier = "mod_tt_science_revolution_job_2_4"
-			add_modifier = { modifier = "mod_tt_science_revolution_job_2_5" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_job_2_4
-				resource_stockpile_compare = { resource = sr_dark_matter value < 20000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter3
+		RP_add_revolution_modifier = {
+			RES = sr_dark_matter
+			MOD_1 = mod_tt_science_revolution_job_2_1
+			MOD_2 = mod_tt_science_revolution_job_2_2
+			MOD_3 = mod_tt_science_revolution_job_2_3
+			MOD_4 = mod_tt_science_revolution_job_2_4
+			MOD_5 = mod_tt_science_revolution_job_2_5
+			COST_1 =  4000
+			COST_2 =  8000
+			COST_3 = 12000
+			COST_4 = 16000
+			COST_5 = 20000
 		}
 	}
 }
@@ -3181,90 +733,18 @@ button_tt_science_revolution_job_3 = {
 		has_modifier = mod_tt_science_revolution_job_5
 	}
 	effect = {
-		#1
-		if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_science_revolution_job_3 }
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 4000 }
-			}
-			add_resource = { sr_dark_matter = -4000 }
-			add_modifier = { modifier = "mod_tt_science_revolution_job_3_1" days = -1 }
-			set_country_flag = flag_tt_science_revolution_job_3
-		}
-		else_if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_science_revolution_job_3 }
-				resource_stockpile_compare = { resource = sr_dark_matter value < 4000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter3
-		}
-		#2
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_job_3_1
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 8000 }
-			}
-			add_resource = { sr_dark_matter = -8000 }
-			remove_modifier = "mod_tt_science_revolution_job_3_1"
-			add_modifier = { modifier = "mod_tt_science_revolution_job_3_2" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_job_3_1
-				resource_stockpile_compare = { resource = sr_dark_matter value < 8000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter3
-		}
-		#3
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_job_3_2
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 12000 }
-			}
-			add_resource = { sr_dark_matter = -12000 }
-			remove_modifier = "mod_tt_science_revolution_job_3_2"
-			add_modifier = { modifier = "mod_tt_science_revolution_job_3_3" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_job_3_2
-				resource_stockpile_compare = { resource = sr_dark_matter value < 12000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter3
-		}
-		#4
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_job_3_3
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 16000 }
-			}
-			add_resource = { sr_dark_matter = -16000 }
-			remove_modifier = "mod_tt_science_revolution_job_3_3"
-			add_modifier = { modifier = "mod_tt_science_revolution_job_3_4" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_job_3_3
-				resource_stockpile_compare = { resource = sr_dark_matter value < 16000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter3
-		}
-		#5
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_job_3_4
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 20000 }
-			}
-			add_resource = { sr_dark_matter = -20000 }
-			remove_modifier = "mod_tt_science_revolution_job_3_4"
-			add_modifier = { modifier = "mod_tt_science_revolution_job_3_5" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_job_3_4
-				resource_stockpile_compare = { resource = sr_dark_matter value < 20000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter3
+		RP_add_revolution_modifier = {
+			RES = sr_dark_matter
+			MOD_1 = mod_tt_science_revolution_job_3_1
+			MOD_2 = mod_tt_science_revolution_job_3_2
+			MOD_3 = mod_tt_science_revolution_job_3_3
+			MOD_4 = mod_tt_science_revolution_job_3_4
+			MOD_5 = mod_tt_science_revolution_job_3_5
+			COST_1 =  4000
+			COST_2 =  8000
+			COST_3 = 12000
+			COST_4 = 16000
+			COST_5 = 20000
 		}
 	}
 }
@@ -3274,90 +754,18 @@ button_tt_science_revolution_dimension = {
 		has_modifier = mod_tt_science_revolution_5
 	}
 	effect = {
-		#1
-		if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_science_revolution_dimension }
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 2000 }
-			}
-			add_resource = { sr_dark_matter = -2000 }
-			add_modifier = { modifier = "mod_tt_science_revolution_dimension_1" days = -1 }
-			set_country_flag = flag_tt_science_revolution_dimension
-		}
-		else_if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_science_revolution_dimension }
-				resource_stockpile_compare = { resource = sr_dark_matter value < 2000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter2
-		}
-		#2
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_dimension_1
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 4000 }
-			}
-			add_resource = { sr_dark_matter = -4000 }
-			remove_modifier = "mod_tt_science_revolution_dimension_1"
-			add_modifier = { modifier = "mod_tt_science_revolution_dimension_2" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_dimension_1
-				resource_stockpile_compare = { resource = sr_dark_matter value < 4000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter2
-		}
-		#3
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_dimension_2
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 6000 }
-			}
-			add_resource = { sr_dark_matter = -6000 }
-			remove_modifier = "mod_tt_science_revolution_dimension_2"
-			add_modifier = { modifier = "mod_tt_science_revolution_dimension_3" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_dimension_2
-				resource_stockpile_compare = { resource = sr_dark_matter value < 6000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter2
-		}
-		#4
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_dimension_3
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 8000 }
-			}
-			add_resource = { sr_dark_matter = -8000 }
-			remove_modifier = "mod_tt_science_revolution_dimension_3"
-			add_modifier = { modifier = "mod_tt_science_revolution_dimension_4" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_dimension_3
-				resource_stockpile_compare = { resource = sr_dark_matter value < 8000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter2
-		}
-		#5
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_dimension_4
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 10000 }
-			}
-			add_resource = { sr_dark_matter = -10000 }
-			remove_modifier = "mod_tt_science_revolution_dimension_4"
-			add_modifier = { modifier = "mod_tt_science_revolution_dimension_5" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_dimension_4
-				resource_stockpile_compare = { resource = sr_dark_matter value < 10000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter2
+		RP_add_revolution_modifier = {
+			RES = sr_dark_matter
+			MOD_1 = mod_tt_science_revolution_dimension_1
+			MOD_2 = mod_tt_science_revolution_dimension_2
+			MOD_3 = mod_tt_science_revolution_dimension_3
+			MOD_4 = mod_tt_science_revolution_dimension_4
+			MOD_5 = mod_tt_science_revolution_dimension_5
+			COST_1 =  2000
+			COST_2 =  4000
+			COST_3 =  6000
+			COST_4 =  8000
+			COST_5 = 10000
 		}
 	}
 }
@@ -3367,93 +775,18 @@ button_tt_science_revolution_dimension_1 = {
 		has_modifier = mod_tt_science_revolution_dimension_5
 	}
 	effect = {
-		#1
-		if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_science_revolution_dimension_1 }
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 4000 }
-			}
-			add_resource = { sr_dark_matter = -4000 }
-			add_modifier = { modifier = "mod_tt_science_revolution_dimension_1_1" days = -1 }
-			set_country_flag = flag_tt_science_revolution_dimension_1
-		}
-		else_if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_science_revolution_dimension_1 }
-				resource_stockpile_compare = { resource = sr_dark_matter value < 4000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter3
-		}
-		#2
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_dimension_1_1
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 8000 }
-			}
-			add_resource = { sr_dark_matter = -8000 }
-			remove_modifier = "mod_tt_science_revolution_dimension_1_1"
-			add_modifier = { modifier = "mod_tt_science_revolution_dimension_1_2" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_dimension_1_1
-				resource_stockpile_compare = { resource = sr_dark_matter value < 8000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter3
-		}
-		#3
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_dimension_1_2
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 12000 }
-			}
-			add_resource = { sr_dark_matter = -12000 }
-			remove_modifier = "mod_tt_science_revolution_dimension_1_2"
-			add_modifier = { modifier = "mod_tt_science_revolution_dimension_1_3" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_dimension_1_2
-				resource_stockpile_compare = { resource = sr_dark_matter value < 12000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter3
-		}
-		#4
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_dimension_1_3
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 16000 }
-			}
-			add_resource = { sr_dark_matter = -16000 }
-			remove_modifier = "mod_tt_science_revolution_dimension_1_3"
-			add_modifier = { modifier = "mod_tt_science_revolution_dimension_1_4" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_dimension_1_3
-				resource_stockpile_compare = { resource = sr_dark_matter value < 16000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter3
-		}
-		#5
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_dimension_1_4
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 20000 }
-			}
-			add_resource = { sr_dark_matter = -20000 }
-			remove_modifier = "mod_tt_science_revolution_dimension_1_4"
-			add_modifier = { modifier = "mod_tt_science_revolution_dimension_1_5" days = -1 }
-			hidden_effect = {
-				country_event = { id = tt_science_revolution_dimension.0 }
-			}
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_dimension_1_4
-				resource_stockpile_compare = { resource = sr_dark_matter value < 20000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter3
+		RP_add_revolution_modifier = {
+			RES = sr_dark_matter
+			MOD_1 = mod_tt_science_revolution_dimension_1_1
+			MOD_2 = mod_tt_science_revolution_dimension_1_2
+			MOD_3 = mod_tt_science_revolution_dimension_1_3
+			MOD_4 = mod_tt_science_revolution_dimension_1_4
+			MOD_5 = mod_tt_science_revolution_dimension_1_5
+			COST_1 =  4000
+			COST_2 =  8000
+			COST_3 = 12000
+			COST_4 = 16000
+			COST_5 = 20000
 		}
 	}
 }
@@ -3463,93 +796,18 @@ button_tt_science_revolution_dimension_2 = {
 		has_modifier = mod_tt_science_revolution_dimension_5
 	}
 	effect = {
-		#1
-		if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_science_revolution_dimension_2 }
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 4000 }
-			}
-			add_resource = { sr_dark_matter = -4000 }
-			add_modifier = { modifier = "mod_tt_science_revolution_dimension_2_1" days = -1 }
-			set_country_flag = flag_tt_science_revolution_dimension_2
-		}
-		else_if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_science_revolution_dimension_2 }
-				resource_stockpile_compare = { resource = sr_dark_matter value < 4000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter3
-		}
-		#2
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_dimension_2_1
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 8000 }
-			}
-			add_resource = { sr_dark_matter = -8000 }
-			remove_modifier = "mod_tt_science_revolution_dimension_2_1"
-			add_modifier = { modifier = "mod_tt_science_revolution_dimension_2_2" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_dimension_2_1
-				resource_stockpile_compare = { resource = sr_dark_matter value < 8000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter3
-		}
-		#3
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_dimension_2_2
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 12000 }
-			}
-			add_resource = { sr_dark_matter = -12000 }
-			remove_modifier = "mod_tt_science_revolution_dimension_2_2"
-			add_modifier = { modifier = "mod_tt_science_revolution_dimension_2_3" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_dimension_2_2
-				resource_stockpile_compare = { resource = sr_dark_matter value < 12000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter3
-		}
-		#4
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_dimension_2_3
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 16000 }
-			}
-			add_resource = { sr_dark_matter = -16000 }
-			remove_modifier = "mod_tt_science_revolution_dimension_2_3"
-			add_modifier = { modifier = "mod_tt_science_revolution_dimension_2_4" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_dimension_2_3
-				resource_stockpile_compare = { resource = sr_dark_matter value < 16000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter3
-		}
-		#5
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_dimension_2_4
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 20000 }
-			}
-			add_resource = { sr_dark_matter = -20000 }
-			remove_modifier = "mod_tt_science_revolution_dimension_2_4"
-			add_modifier = { modifier = "mod_tt_science_revolution_dimension_2_5" days = -1 }
-			hidden_effect = {
-				country_event = { id = tt_science_revolution_dimension.0 }
-			}
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_dimension_2_4
-				resource_stockpile_compare = { resource = sr_dark_matter value < 20000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter3
+		RP_add_revolution_modifier = {
+			RES = sr_dark_matter
+			MOD_1 = mod_tt_science_revolution_dimension_2_1
+			MOD_2 = mod_tt_science_revolution_dimension_2_2
+			MOD_3 = mod_tt_science_revolution_dimension_2_3
+			MOD_4 = mod_tt_science_revolution_dimension_2_4
+			MOD_5 = mod_tt_science_revolution_dimension_2_5
+			COST_1 =  4000
+			COST_2 =  8000
+			COST_3 = 12000
+			COST_4 = 16000
+			COST_5 = 20000
 		}
 	}
 }
@@ -3559,93 +817,18 @@ button_tt_science_revolution_dimension_3 = {
 		has_modifier = mod_tt_science_revolution_dimension_5
 	}
 	effect = {
-		#1
-		if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_science_revolution_dimension_3 }
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 4000 }
-			}
-			add_resource = { sr_dark_matter = -4000 }
-			add_modifier = { modifier = "mod_tt_science_revolution_dimension_3_1" days = -1 }
-			set_country_flag = flag_tt_science_revolution_dimension_3
-		}
-		else_if = {
-			limit = {
-				NOT = { has_country_flag = flag_tt_science_revolution_dimension_3 }
-				resource_stockpile_compare = { resource = sr_dark_matter value < 4000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter3
-		}
-		#2
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_dimension_3_1
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 8000 }
-			}
-			add_resource = { sr_dark_matter = -8000 }
-			remove_modifier = "mod_tt_science_revolution_dimension_3_1"
-			add_modifier = { modifier = "mod_tt_science_revolution_dimension_3_2" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_dimension_3_1
-				resource_stockpile_compare = { resource = sr_dark_matter value < 8000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter3
-		}
-		#3
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_dimension_3_2
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 12000 }
-			}
-			add_resource = { sr_dark_matter = -12000 }
-			remove_modifier = "mod_tt_science_revolution_dimension_3_2"
-			add_modifier = { modifier = "mod_tt_science_revolution_dimension_3_3" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_dimension_3_2
-				resource_stockpile_compare = { resource = sr_dark_matter value < 12000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter3
-		}
-		#4
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_dimension_3_3
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 16000 }
-			}
-			add_resource = { sr_dark_matter = -16000 }
-			remove_modifier = "mod_tt_science_revolution_dimension_3_3"
-			add_modifier = { modifier = "mod_tt_science_revolution_dimension_3_4" days = -1 }
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_dimension_3_3
-				resource_stockpile_compare = { resource = sr_dark_matter value < 16000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter3
-		}
-		#5
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_dimension_3_4
-				resource_stockpile_compare = { resource = sr_dark_matter value >= 20000 }
-			}
-			add_resource = { sr_dark_matter = -20000 }
-			remove_modifier = "mod_tt_science_revolution_dimension_3_4"
-			add_modifier = { modifier = "mod_tt_science_revolution_dimension_3_5" days = -1 }
-			hidden_effect = {
-				country_event = { id = tt_science_revolution_dimension.0 }
-			}
-		}
-		else_if = {
-			limit = {
-				has_modifier = mod_tt_science_revolution_dimension_3_4
-				resource_stockpile_compare = { resource = sr_dark_matter value < 20000 }
-			}
-			custom_tooltip = stop_revolution_sr_dark_matter3
+		RP_add_revolution_modifier = {
+			RES = sr_dark_matter
+			MOD_1 = mod_tt_science_revolution_dimension_3_1
+			MOD_2 = mod_tt_science_revolution_dimension_3_2
+			MOD_3 = mod_tt_science_revolution_dimension_3_3
+			MOD_4 = mod_tt_science_revolution_dimension_3_4
+			MOD_5 = mod_tt_science_revolution_dimension_3_5
+			COST_1 =  4000
+			COST_2 =  8000
+			COST_3 = 12000
+			COST_4 = 16000
+			COST_5 = 20000
 		}
 	}
 }
