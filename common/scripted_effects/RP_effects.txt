@@ -1,0 +1,82 @@
+
+# this = country
+RP_add_modifier_or_show_tooltip = {
+	if = {
+		limit = { resource_stockpile_compare = { resource = $RES$ value >= $COST$ } }
+		add_resource = { $RES$ = $COST$ mult = -1 }
+		[[PREV_MOD]
+			hidden_effect = { remove_modifier = $PREV_MOD$ }
+		]
+		add_modifier = { modifier = $MODIFIER$ days = -1 }
+	}
+	else = {
+		custom_tooltip_with_params = {
+			description = stop_revolution_$RES$
+			description_parameters = { VALUE = $COST$ }
+		}
+	}
+}
+
+# this = country
+# @param: RES    消耗的资源类型
+# @param: MOD_1  第一级的静态修正
+# @param: COST_1 第一级花费
+# @param: MOD_2  第二级的静态修正
+# @param: COST_2 第一级花费
+# @param: MOD_3  第三级的静态修正
+# @param: COST_3 第一级花费
+# @param: MOD_4  第四级的静态修正
+# @param: COST_4 第一级花费
+# @param: MOD_5  第五级的静态修正
+# @param: COST_5 第一级花费
+RP_add_revolution_modifier = {
+	switch = {
+		trigger = has_modifier
+		# 第一级升级到第二级
+		$MOD_1$ = {
+			RP_add_modifier_or_show_tooltip = {
+				RES = $RES$
+				COST = $COST_2$
+				PREV_MOD = $MOD_1$
+				MODIFIER = $MOD_2$
+			}
+		}
+		# 二升三
+		$MOD_2$ = {
+			RP_add_modifier_or_show_tooltip = {
+				RES = $RES$
+				COST = $COST_3$
+				PREV_MOD = $MOD_2$
+				MODIFIER = $MOD_3$
+			}
+		}
+		# 三升四
+		$MOD_3$ = {
+			RP_add_modifier_or_show_tooltip = {
+				RES = $RES$
+				COST = $COST_4$
+				PREV_MOD = $MOD_3$
+				MODIFIER = $MOD_4$
+			}
+		}
+		# 四升五
+		$MOD_4$ = {
+			RP_add_modifier_or_show_tooltip = {
+				RES = $RES$
+				COST = $COST_5$
+				PREV_MOD = $MOD_4$
+				MODIFIER = $MOD_5$
+			}
+		}
+		# 防止第五级完成后回到default
+		$MOD_5$ = {}
+		# 添加第一级修正，必须放最后（default里）
+		default = {
+			RP_add_modifier_or_show_tooltip = {
+				RES = $RES$
+				COST = $COST_1$
+				MODIFIER = $MOD_1$
+			}
+		}
+	}
+}
